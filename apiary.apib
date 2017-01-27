@@ -142,11 +142,13 @@ HOST: https://testapi.linc.world/v1
                 }
             }
 
-### Followers [/users/{id}/followers]
+### Followers [/users/{id}/followers{?page,size}]
 #### Get Followers [GET]
 + Parameters
     
     + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
+    + page (optional, number) - Page number for pagination, default: 1
+    + size (optional, number) - Items per page, default: 20
 
 + Request
             
@@ -221,11 +223,13 @@ HOST: https://testapi.linc.world/v1
                 }
             }
 
-### Following [/users/{id}/following]
+### Following [/users/{id}/following{?page,size}]
 #### Get Following [GET]
 + Parameters
     
     + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
+    + page (optional, number) - Page number for pagination, default: 1
+    + size (optional, number) - Items per page, default: 20
 
 + Request
             
