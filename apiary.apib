@@ -1,0 +1,295 @@
+FORMAT: 1A
+HOST: https://testapi.linc.world/v1/
+
+# Linc
+
+
+### oAuth2 Password Grant [/oauth/token]
+#### Get Token/Login [POST]
+    
++ Request (application/x-www-form-urlencoded)
+        
+    + Form Data
+
+        + grant_type: "password"
+        + username: <user_email>
+        + password: <user_password>
+            
+    + Headers
+
+            Authorization: Basic <clientID>:<clientSecret>
+            
+    + Body
+            
+            grant_type=password&username=name%40email.com&password=password
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "access_token": "3sedq3otrh1qfsj61bljkpkjr7eqr3ggkh9b614",
+                "token_type": "Bearer",
+                "expires_in": 3599,
+                "refresh_token": "ieosthc9h1dksne0d0l7llqaig47sl9anaml73103q1ipoj40i512k10o"
+            }
+
+
+## User Signup [/users/]
+### Signup [POST]
+    
++ Request (application/x-www-form-urlencoded)
+        
+    + Form Data
+
+        + name: <user_name>
+        + email: <user_email>
+        + password: <user_password>
+        + username: <user_username>
+            
+    + Headers
+
+            Authorization: Basic <clientID>:<clientSecret>
+            
+    + Body
+    
+            name=User%20Name&email=name%40email.com&password=password&username=username
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "access_token": "3sedq3otrh1qfsj61bljkpkjr7eqr3ggkh9b614",
+                "token_type": "Bearer",
+                "expires_in": 3599,
+                "refresh_token": "ieosthc9h1dksne0d0l7llqaig47sl9anaml73103q1ipoj40i512k10o"
+            }
+
+### User [/users/{id}]
+#### GET
++ Parameters
+    
+    + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
+
++ Request (application/x-www-form-urlencoded)
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "id": "54A0117ABD2BE3F251C3492A",
+                "name": "Afzaal Ameer",
+                "username": "afzaalace",
+                "title": "Some Title",
+                "bio": "Lorem ipsum dolor met.",
+                "location": "Madrid, Madrid, Spain",
+                "followers": 5,
+                "following": 2,
+                "leafs": 5,
+                "membersince": "2014-12-28T14:19:38.000Z",
+                "rev": 5,
+                "website": "http://www.afzaalace.com",
+                "facebook": "https://www.facebook.com/pixelexploiter",
+                "google": "https://plus.google.com/+AfzaalAmeer",
+                "twitter": "http://twitter.com/afzaalace",
+                "linkedin": "http://in.linkedin.com/in/afzaalace",
+                "pinterest": "",
+                "views": 164,
+                "post_count": 2,
+                "following_state": false,
+                "interests": {
+                    "sectors": [
+                        {
+                            "Sector": "Energy",
+                            "Share": 86
+                        },
+                        {
+                            "Sector": "Economy",
+                            "Share": 50
+                        },
+                        {
+                            "Sector": "Renewable",
+                            "Share": 48
+                        },
+                        {
+                            "Sector": "t5",
+                            "Share": 45
+                        },
+                        {
+                            "Sector": "Water",
+                            "Share": 42
+                        }
+                    ]
+                },
+                "_links": {
+                    "self": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A"
+                    },
+                    "followers": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
+                    },
+                    "following": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/following"
+                    }
+                }
+            }
+
+##### Followers [/users/{id}/followers]
+###### GET
++ Parameters
+    
+    + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
+
++ Request (application/x-www-form-urlencoded)
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "users": [
+                    {
+                        "id": "54A05594DFE5D181114C762A",
+                        "name": "Pranay Krishen",
+                        "username": "pranay",
+                        "title": "Founder | Linc",
+                        "bio": "Founder of Linc.world - media, community and resource management platform to support global sustainable development.<br/><br/>Previously, built and raced a solar-powered race car across the 3021km Australian Outback; served as Canada’s cleantech trade ambassador to Brazil; led the deployment of eco-schools across Jordan; researched advanced smart-grid and energy storage solutions with the FP7 commission in Greece; built a green-building residential complex in India; and founded EcoAlliance Cleantech, a photovoltaic systems integrator.<br/><br/>Mechatronics Engineering and Business graduate from Western University in Canada. Designated P.Eng. (EIT) and LEED AP. Lived and worked in Canada, India, Jordan, Chile, Brazil, UK, Denmark and Spain.",
+                        "location": "Madrid, Madrid, Spain",
+                        "followers": 21,
+                        "following": 71,
+                        "leafs": 65,
+                        "membersince": 1419793812,
+                        "website": "http://www.linc.world",
+                        "_links": {
+                            "self": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A"
+                            },
+                            "followers": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A/followers"
+                            },
+                            "following": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                            }
+                        }
+                    },
+                    {
+                        "id": "580667C5F324DBE8290FA3A9",
+                        "name": "Danny Saltaren",
+                        "username": "",
+                        "title": "",
+                        "bio": "Freelance Senior Product Designer",
+                        "location": "Madrid Area, Spain",
+                        "followers": 1,
+                        "following": 3,
+                        "leafs": 0,
+                        "membersince": 1476814789,
+                        "website": "",
+                        "_links": {
+                            "self": {
+                                "href": "/v1/users/580667C5F324DBE8290FA3A9"
+                            },
+                            "followers": {
+                                "href": "/v1/users/580667C5F324DBE8290FA3A9/followers"
+                            },
+                            "following": {
+                                "href": "/v1/users/580667C5F324DBE8290FA3A9/following"
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
+                    },
+                    "user": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A"
+                    }
+                }
+            }
+
+##### Following [/users/{id}/following]
+###### GET
++ Parameters
+    
+    + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
+
++ Request (application/x-www-form-urlencoded)
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "users": [
+                    {
+                        "id": "54A05594DFE5D181114C762A",
+                        "name": "Pranay Krishen",
+                        "username": "pranay",
+                        "title": "Founder | Linc",
+                        "bio": "Founder of Linc.world - media, community and resource management platform to support global sustainable development.<br/><br/>Previously, built and raced a solar-powered race car across the 3021km Australian Outback; served as Canada’s cleantech trade ambassador to Brazil; led the deployment of eco-schools across Jordan; researched advanced smart-grid and energy storage solutions with the FP7 commission in Greece; built a green-building residential complex in India; and founded EcoAlliance Cleantech, a photovoltaic systems integrator.<br/><br/>Mechatronics Engineering and Business graduate from Western University in Canada. Designated P.Eng. (EIT) and LEED AP. Lived and worked in Canada, India, Jordan, Chile, Brazil, UK, Denmark and Spain.",
+                        "location": "Madrid, Madrid, Spain",
+                        "followers": 21,
+                        "following": 71,
+                        "leafs": 65,
+                        "membersince": 1419793812,
+                        "website": "http://www.linc.world",
+                        "_links": {
+                            "self": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A"
+                            },
+                            "followers": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A/followers"
+                            },
+                            "following": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                            }
+                        }
+                    },
+                    {
+                        "id": "580667C5F324DBE8290FA3A9",
+                        "name": "Danny Saltaren",
+                        "username": "",
+                        "title": "",
+                        "bio": "Freelance Senior Product Designer",
+                        "location": "Madrid Area, Spain",
+                        "followers": 1,
+                        "following": 3,
+                        "leafs": 0,
+                        "membersince": 1476814789,
+                        "website": "",
+                        "_links": {
+                            "self": {
+                                "href": "/v1/users/580667C5F324DBE8290FA3A9"
+                            },
+                            "followers": {
+                                "href": "/v1/users/580667C5F324DBE8290FA3A9/followers"
+                            },
+                            "following": {
+                                "href": "/v1/users/580667C5F324DBE8290FA3A9/following"
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/following"
+                    },
+                    "user": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A"
+                    }
+                }
+            }
