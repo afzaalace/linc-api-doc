@@ -1,11 +1,11 @@
 FORMAT: 1A
 HOST: https://testapi.linc.world/v1
 
-# Linc
+# Linc API
 
-
-### oAuth2 Password Grant [/auth/token]
-#### Get Token/Login [POST]
+# Group Authorization
+## oAuth2 Password Grant [/auth/token]
+### Get Token/Login [POST]
     
 + Request (application/x-www-form-urlencoded)
         
@@ -34,8 +34,10 @@ HOST: https://testapi.linc.world/v1
                 "refresh_token": "ieosthc9h1dksne0d0l7llqaig47sl9anaml73103q1ipoj40i512k10o"
             }
 
+# Group Users
 
 ## User Signup [/users/]
+
 ### Signup [POST]
     
 + Request (application/x-www-form-urlencoded)
@@ -66,8 +68,8 @@ HOST: https://testapi.linc.world/v1
                 "refresh_token": "ieosthc9h1dksne0d0l7llqaig47sl9anaml73103q1ipoj40i512k10o"
             }
 
-### User [/users/{id}]
-#### GET
+## User [/users/{id}]
+### Get User [GET]
 + Parameters
     
     + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
@@ -140,8 +142,8 @@ HOST: https://testapi.linc.world/v1
                 }
             }
 
-##### Followers [/users/{id}/followers]
-###### GET
+### Followers [/users/{id}/followers]
+#### Get Followers [GET]
 + Parameters
     
     + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
@@ -217,8 +219,8 @@ HOST: https://testapi.linc.world/v1
                 }
             }
 
-##### Following [/users/{id}/following]
-###### GET
+### Following [/users/{id}/following]
+#### Get Following [GET]
 + Parameters
     
     + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
