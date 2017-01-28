@@ -303,3 +303,69 @@ HOST: https://testapi.linc.world/v1
                     }
                 }
             }
+
+
+# Group Posts
+
+## Post [/posts/{id}]
+### Get Post [GET]
++ Parameters
+    
+    + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
+
++ Request
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "id": "581DEDEA002B74604FE091C1",
+                "source": "http://www.autonews.com/article/20161104/OEM05/161109912/teslas-solarcity-deal-gets-a-boost-from-shareholder-advisory-firm",
+                "title": "Tesla's SolarCity deal gets a boost from shareholder advisory firm",
+                "owner": {
+                    "name": "Dan Rogers",
+                    "id": "55195B5A0BD9E6AC218174AC",
+                    "username": "danrogers",
+                    "title": "Co-Founder of Linc",
+                    "bio": "",
+                    "location": "Madrid, Madrid, Spain",
+                    "followers_count": 6,
+                    "followings_count": 4,
+                    "leafs_count": 48,
+                    "membersince": "2015-03-30T14:19:06.000Z",
+                    "rev": 2,
+                    "website": "",
+                    "_links": {
+                        "self": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC"
+                        },
+                        "followers": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
+                        },
+                        "following": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/following"
+                        }
+                    }
+                },
+                "description": "Institutional Shareholder Services today recommended that investors in both companies approve Tesla Motors' plan to buy solar panel installer SolarCity for more than $2 billion.",
+                "created": "2016-11-05T14:34:18.000Z",
+                "image": "http://cdn.linc.world/......",
+                "rev": 0,
+                "height": 172,
+                "views_count": 41,
+                "leafs_count": 0,
+                "comments_count": 0,
+                "shortURL": "BG",
+                "timestamp": "2017-01-13T00:58:55.000Z",
+                "leaf_state": false,
+                "_links": {
+                    "self": {
+                        "href": "/v1/posts/581DEDEA002B74604FE091C1"
+                    }
+                }
+            }
