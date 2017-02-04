@@ -788,3 +788,99 @@ HOST: https://testapi.linc.world/v1
                     }
                 }
             }
+
+# Group Notifications - Needs more work
+
+## User Notifications [/notifications]
+### Get Notifications [GET]
+
++ Request
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "notifications": [
+                    {
+                        "id": 12873,
+                        "activity": 3366,
+                        "user": "54A0117ABD2BE3F251C3492A",
+                        "user_name": "Afzaal Ameer",
+                        "owner_id": "54A05594DFE5D181114C762A",
+                        "owner_name": "Pranay Krishen",
+                        "type": "followFollowed",
+                        "post": "",
+                        "title": "",
+                        "other_id": "57C46B27EBEE47694A1ED92C",
+                        "other_name": "Antonio Jiménez Martínez",
+                        "param": "",
+                        "status": -1,
+                        "timestamp": "2017-01-15T15:32:23.000Z"
+                    },
+                    {
+                        "id": 12626,
+                        "activity": 3325,
+                        "user": "54A0117ABD2BE3F251C3492A",
+                        "user_name": "Afzaal Ameer",
+                        "owner_id": "54A05594DFE5D181114C762A",
+                        "owner_name": "Pranay Krishen",
+                        "type": "post",
+                        "post": "5835A14EFE73BC5A3372CF97",
+                        "title": "What's Really Warming the World?",
+                        "other_id": "",
+                        "other_name": "",
+                        "param": "",
+                        "status": -1,
+                        "timestamp": "2016-11-23T14:01:50.000Z"
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "/v1/notifications"
+                    },
+                    "next": {
+                        "href": "/v1/notifications?page=2"
+                    },
+                    "last": {
+                        "href": "/v1/notifications?page=21"
+                    }
+                }
+            }
+
+## Notification [/notifications/{id}]
+### Get Notification [GET]
++ Parameters
+    
+    + id (required, number, `25`)
+
++ Request
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "id": 12873,
+                "activity": 3366,
+                "user": "54A0117ABD2BE3F251C3492A",
+                "user_name": "Afzaal Ameer",
+                "owner_id": "54A05594DFE5D181114C762A",
+                "owner_name": "Pranay Krishen",
+                "type": "followFollowed",
+                "post": "",
+                "title": "",
+                "other_id": "57C46B27EBEE47694A1ED92C",
+                "other_name": "Antonio Jiménez Martínez",
+                "param": "",
+                "status": -1,
+                "timestamp": "2017-01-15T15:32:23.000Z"
+            }
