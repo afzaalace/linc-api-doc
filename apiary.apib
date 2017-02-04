@@ -491,3 +491,300 @@ HOST: https://testapi.linc.world/v1
                     }
                 }
             }
+
+### Post Comments [/posts/{id}/comments{?page,size}]
+#### Get Comments [GET]
++ Parameters
+    
+    + id (required, hexadecimal, `56E1A4C8C6658CBD561ECF05`)
+    + page (optional, number) - Page number for pagination, default: 1
+    + size (optional, number) - Items per page, default: 20
+
++ Request
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "comments": [
+                    {
+                        "id": 25,
+                        "user": {
+                            "name": "Pranay Krishen",
+                            "id": "54A05594DFE5D181114C762A",
+                            "username": "pranay",
+                            "title": "Founder | Linc",
+                            "location": "Madrid, Madrid, Spain",
+                            "image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A"
+                                },
+                                "activities": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/activities"
+                                },
+                                "followers": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/followers"
+                                },
+                                "following": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                                },
+                                "posts": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/posts"
+                                }
+                            }
+                        },
+                        "comment": "<a class=\"user\" target=\"_blank\" href=\"/danrogers\">Dan Rogers</a>  Could you point to any peer-reviewed publications on the subject of climate by any of these 49 signatories?",
+                        "leafs_count": 0,
+                        "created_date": "2016-03-11T11:43:58.000Z",
+                        "meta": "",
+                        "flag": 0,
+                        "_links": {
+                            "self": {
+                                "href": "/v1/comments/25"
+                            }
+                        }
+                    },
+                    {
+                        "id": 26,
+                        "user": {
+                            "name": "Dan Rogers",
+                            "id": "55195B5A0BD9E6AC218174AC",
+                            "username": "danrogers",
+                            "title": "Co-Founder of Linc",
+                            "location": "Madrid, Madrid, Spain",
+                            "image": "https://cdn.linc.world/users/profile-55195B5A0BD9E6AC218174AC.jpg",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC"
+                                },
+                                "activities": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/activities"
+                                },
+                                "followers": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
+                                },
+                                "following": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/following"
+                                },
+                                "posts": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
+                                }
+                            }
+                        },
+                        "comment": "<a class=\"user\" target=\"_blank\" href=\"/pranay\">Pranay Krishen</a>  No.",
+                        "leafs_count": 0,
+                        "created_date": "2016-03-11T11:45:32.000Z",
+                        "meta": "",
+                        "flag": 0,
+                        "_links": {
+                            "self": {
+                                "href": "/v1/comments/26"
+                            }
+                        }
+                    },
+                    {
+                        "id": 30,
+                        "user": {
+                            "name": "Pranay Krishen",
+                            "id": "54A05594DFE5D181114C762A",
+                            "username": "pranay",
+                            "title": "Founder | Linc",
+                            "location": "Madrid, Madrid, Spain",
+                            "image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A"
+                                },
+                                "activities": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/activities"
+                                },
+                                "followers": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/followers"
+                                },
+                                "following": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                                },
+                                "posts": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/posts"
+                                }
+                            }
+                        },
+                        "comment": "<a class=\"user\" target=\"_blank\" href=\"/danrogers\">Dan Rogers</a>  I couldn’t either. A letter issued by 49 former NASA employees is certainly worth our full attention (despite the fact that none of them seem to be climate specialists, and represent a small fraction of NASA faculty) - but what I find troubling is that their own position on this science isn’t backed by the slightest empirical evidence. <br> <br> I agree that NASA ought to be a non-advocacy organization - reporting only on empirical data and the consensus of the scientific community’s interpretation of that data. However, this letter seems to suggest that NASA ought to withdraw from public discourse and the peer review process on the subject. This, to me, makes very little sense. <br> <br> For a deeper analysis, I’d recommend this read: http://scholarsandrogues.com/2012/04/25/errors-shortcomings-void-nasa-climate-letter/",
+                        "leafs_count": 0,
+                        "created_date": "2016-03-11T14:35:41.000Z",
+                        "meta": "",
+                        "flag": 0,
+                        "_links": {
+                            "self": {
+                                "href": "/v1/comments/30"
+                            }
+                        }
+                    },
+                    {
+                        "id": 31,
+                        "user": {
+                            "name": "Dan Rogers",
+                            "id": "55195B5A0BD9E6AC218174AC",
+                            "username": "danrogers",
+                            "title": "Co-Founder of Linc",
+                            "location": "Madrid, Madrid, Spain",
+                            "image": "https://cdn.linc.world/users/profile-55195B5A0BD9E6AC218174AC.jpg",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC"
+                                },
+                                "activities": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/activities"
+                                },
+                                "followers": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
+                                },
+                                "following": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/following"
+                                },
+                                "posts": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
+                                }
+                            }
+                        },
+                        "comment": "<a class=\"user\" target=\"_blank\" href=\"/pranay\">Pranay Krishen</a>   Where in the letter do they suggest that \"NASA ought to withdraw from public discourse and the peer review process on the subject\"? <br> <br> In regards to your link, the article beings with a blatant lie. \"The letter requested that NASA in general and the Goddard Institute for Space Studies (GISS) in particular stop publishing the scientific conclusions about the human-driven causes of global climate disruption.\" This is simply not true.  <br> <br> The article addresses the \"first error\" by cherry picking words to quote and leaving out the word \"catastrophic\" which significantly changes the sentence.  The author then goes on to try to prove that the Earth has been in fact warming, even though that was never disputed in the letter. <br> <br> The \"second error\" is addressed with another lie.  The author says \"The second error is that only a few climate scientists have declared that they deny the science underlying human-driven climate disruption, not the “hundreds” the letter claims.\" What is the authors motive to so thoroughly twist the words of the letter? <br> <br> More of the same on the \"third error\". The author says \"The third error is the letter’s reference to “tens of thousands of other scientists” who supposedly deny climate disruption.\" The misrepresentation of the letter is just out of hand by this point. <br>",
+                        "leafs_count": 0,
+                        "created_date": "2016-03-11T16:51:28.000Z",
+                        "meta": "",
+                        "flag": 0,
+                        "_links": {
+                            "self": {
+                                "href": "/v1/comments/31"
+                            }
+                        }
+                    },
+                    {
+                        "id": 35,
+                        "user": {
+                            "name": "Pranay Krishen",
+                            "id": "54A05594DFE5D181114C762A",
+                            "username": "pranay",
+                            "title": "Founder | Linc",
+                            "location": "Madrid, Madrid, Spain",
+                            "image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A"
+                                },
+                                "activities": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/activities"
+                                },
+                                "followers": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/followers"
+                                },
+                                "following": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                                },
+                                "posts": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/posts"
+                                }
+                            }
+                        },
+                        "comment": "<a class=\"user\" target=\"_blank\" href=\"/danrogers\">Dan Rogers</a>   I don’t agree with your above assessment of ‘lies’ and ‘misrepresentations’. The analysis seems fair. Unlike the letter, the opinions stated in the ‘errors’ have been backed by strong data.  <br> <br> The first error does state ‘catastrophic’. What words are being ‘twisted’ in the second error? Please provide proof that there are, in fact, \"hundreds of well-known climate scientists and tens of thousands of other scientists\" that support the viewpoint of this letter. I don’t understand where you’re going with the ’third error’…  <br> <br> To make this a productive discussion, why don’t we stop sparring over wording and sentence structures. Instead, since you seem to have a better handle on the perspective of this letter, could you please - in your own words - paraphrase what its point is?  <br> <br> Some empirical evidence would go a long way towards countering the inherent bias of the author of this letter - Chairman of PlantsNeedCO2.org - whose homepage slogans include: “Earth and its inhabitants need more, not less, CO2.” and “CO2 is Earth's greatest airborne fertilizer. Without it - No Life On Earth!”",
+                        "leafs_count": 0,
+                        "created_date": "2016-03-15T01:47:11.000Z",
+                        "meta": "",
+                        "flag": 0,
+                        "_links": {
+                            "self": {
+                                "href": "/v1/comments/35"
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments"
+                    },
+                    "post": {
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
+                    }
+                }
+            }
+
+# Group Comments
+
+## Comment [/comments/{id}]
+### Get Comment [GET]
++ Parameters
+    
+    + id (required, number, `25`)
+
++ Request
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "id": 25,
+                "user": {
+                    "name": "Pranay Krishen",
+                    "id": "54A05594DFE5D181114C762A",
+                    "username": "pranay",
+                    "title": "Founder | Linc",
+                    "location": "Madrid, Madrid, Spain",
+                    "image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
+                    "_links": {
+                        "self": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A"
+                        },
+                        "activities": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/activities"
+                        },
+                        "followers": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/followers"
+                        },
+                        "following": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                        },
+                        "posts": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/posts"
+                        }
+                    }
+                },
+                "post": {
+                    "id": "56E1A4C8C6658CBD561ECF05",
+                    "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
+                    "description": "Looks like another GISS miss, more than a few people are getting fed up with Jim Hansen and Gavin Schmidt and their climate shenanigans. Some very prominent NASA voices speak out in a scathing lett…",
+                    "created_date": "2016-03-10T16:46:00.000Z",
+                    "leafs_count": 1,
+                    "comments_count": 5,
+                    "shortURL": "dW",
+                    "timestamp": "2016-12-22T14:12:26.000Z",
+                    "_links": {
+                        "self": {
+                            "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
+                        },
+                        "comments": {
+                            "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments"
+                        }
+                    }
+                },
+                "comment": "<a class=\"user\" target=\"_blank\" href=\"/danrogers\">Dan Rogers</a>  Could you point to any peer-reviewed publications on the subject of climate by any of these 49 signatories?",
+                "leafs_count": 0,
+                "created_date": "2016-03-11T11:43:58.000Z",
+                "meta": "",
+                "flag": 0,
+                "leaf_state": false,
+                "_links": {
+                    "self": {
+                        "href": "/v1/comments/25"
+                    }
+                }
+            }
