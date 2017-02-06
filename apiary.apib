@@ -416,6 +416,72 @@ HOST: https://testapi.linc.world/v1
                 }
             }
 
+### User Activities [/users/{id}/activities{?page,size}]
+#### Get Activities [GET]
++ Parameters
+    
+    + id (required, hexadecimal, `54A05594DFE5D181114C762A`)
+    + page (optional, number) - Page number for pagination, default: 1
+    + size (optional, number) - Items per page, default: 20
+
++ Request
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "activities": [
+                    {
+                        "id": 3366,
+                        "owner_id": "54A05594DFE5D181114C762A",
+                        "owner_name": "Pranay Krishen",
+                        "user_id": "57C46B27EBEE47694A1ED92C",
+                        "user_name": "Antonio Jiménez Martínez",
+                        "type": "follow",
+                        "post_id": "",
+                        "title": "",
+                        "created_date": "2017-01-15T15:32:23.000Z"
+                    },
+                    {
+                        "id": 3325,
+                        "owner_id": "54A05594DFE5D181114C762A",
+                        "owner_name": "Pranay Krishen",
+                        "user_id": "54A05594DFE5D181114C762A",
+                        "user_name": "Pranay Krishen",
+                        "type": "post",
+                        "post_id": "5835A14EFE73BC5A3372CF97",
+                        "title": "What's Really Warming the World?",
+                        "created_date": "2016-11-23T14:01:50.000Z"
+                    },
+                    {
+                        "id": 3257,
+                        "owner_id": "54A05594DFE5D181114C762A",
+                        "owner_name": "Pranay Krishen",
+                        "user_id": "55195B5A0BD9E6AC218174AC",
+                        "user_name": "Dan Rogers",
+                        "type": "leaf",
+                        "post_id": "582C59ED4A46D6D7064643C8",
+                        "title": "Solo across the Atlantic in a Folkboat – Yachting World",
+                        "created_date": "2016-11-17T10:14:46.000Z"
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "/v1/users/54A05594DFE5D181114C762A/activities"
+                    },
+                    "next": {
+                        "href": "/v1/users/54A05594DFE5D181114C762A/activities?page=2"
+                    },
+                    "last": {
+                        "href": "/v1/users/54A05594DFE5D181114C762A/activities?page=14"
+                    }
+                }
+            }
 
 # Group Posts
 
