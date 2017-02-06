@@ -416,6 +416,163 @@ HOST: https://testapi.linc.world/v1
                 }
             }
 
+### User Leafed Posts [/users/{id}/leafed{?page,size}]
+#### Get Posts [GET]
++ Parameters
+    
+    + id (required, hexadecimal, `54A05594DFE5D181114C762A`)
+    + page (optional, number) - Page number for pagination, default: 1
+    + size (optional, number) - Items per page, default: 20
+
++ Request
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "posts": [
+                    {
+                        "post": {
+                            "id": "582C59ED4A46D6D7064643C8",
+                            "source": "http://www.yachtingworld.com/features/solo-across-the-atlantic-in-a-folkboat-67743",
+                            "title": "Solo across the Atlantic in a Folkboat – Yachting World",
+                            "description": "Carrying his guitar, some fine wine, an old French racing bike and a sextant, Leo Goolden sets out on his first solo Atlantic crossing in a 24ft Folkboat",
+                            "created_date": "2016-11-16T13:06:53.000Z",
+                            "image": "https://cdn.linc.world/articles/582C59ED4A46D6D7064643C8.jpg",
+                            "rev": 0,
+                            "views_count": 45,
+                            "leafs_count": 1,
+                            "comments_count": 0,
+                            "shortURL": "Dt",
+                            "timestamp": "2017-01-15T16:41:16.000Z",
+                            "user": {
+                                "name": "Dan Rogers",
+                                "id": "55195B5A0BD9E6AC218174AC",
+                                "username": "danrogers",
+                                "title": "Co-Founder of Linc",
+                                "bio": "",
+                                "location": "Madrid, Madrid, Spain",
+                                "followers_count": 6,
+                                "followings_count": 4,
+                                "leafs_count": 48,
+                                "membersince": "2015-03-30T14:19:06.000Z",
+                                "rev": 2,
+                                "website": "",
+                                "image": "https://cdn.linc.world/users/profile-55195B5A0BD9E6AC218174AC.jpg",
+                                "_links": {
+                                    "self": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC"
+                                    },
+                                    "activities": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/activities"
+                                    },
+                                    "followers": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
+                                    },
+                                    "following": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/following"
+                                    },
+                                    "leafed": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/leafed"
+                                    },
+                                    "posts": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
+                                    }
+                                }
+                            },
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/posts/582C59ED4A46D6D7064643C8"
+                                },
+                                "comments": {
+                                    "href": "/v1/posts/582C59ED4A46D6D7064643C8/comments"
+                                }
+                            }
+                        },
+                        "leafed_date": "2016-11-17T10:14:46.000Z"
+                    },
+                    {
+                        "post": {
+                            "id": "57CD39DD848534652600324A",
+                            "source": "http://www.treehugger.com/corporate-responsibility/lets-make-every-weekend-three-day-weekend.html",
+                            "title": "Let's make every weekend a three day weekend",
+                            "description": "It’s good for the environment and could be for the workers too.",
+                            "created_date": "2016-09-05T09:24:45.000Z",
+                            "image": "https://cdn.linc.world/articles/57CD39DD848534652600324A.jpg",
+                            "rev": 0,
+                            "views_count": 100,
+                            "leafs_count": 1,
+                            "comments_count": 0,
+                            "shortURL": "xe",
+                            "timestamp": "2017-01-16T20:05:30.000Z",
+                            "user": {
+                                "name": "Dan Rogers",
+                                "id": "55195B5A0BD9E6AC218174AC",
+                                "username": "danrogers",
+                                "title": "Co-Founder of Linc",
+                                "bio": "",
+                                "location": "Madrid, Madrid, Spain",
+                                "followers_count": 6,
+                                "followings_count": 4,
+                                "leafs_count": 48,
+                                "membersince": "2015-03-30T14:19:06.000Z",
+                                "rev": 2,
+                                "website": "",
+                                "image": "https://cdn.linc.world/users/profile-55195B5A0BD9E6AC218174AC.jpg",
+                                "_links": {
+                                    "self": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC"
+                                    },
+                                    "activities": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/activities"
+                                    },
+                                    "followers": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
+                                    },
+                                    "following": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/following"
+                                    },
+                                    "leafed": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/leafed"
+                                    },
+                                    "posts": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
+                                    }
+                                }
+                            },
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/posts/57CD39DD848534652600324A"
+                                },
+                                "comments": {
+                                    "href": "/v1/posts/57CD39DD848534652600324A/comments"
+                                }
+                            }
+                        },
+                        "leafed_date": "2016-09-05T16:22:42.000Z"
+                    },
+                ],
+                "_links": {
+                    "self": {
+                        "href": "/v1/users/54A05594DFE5D181114C762A/leafed"
+                    },
+                    "next": {
+                        "href": "/v1/users/54A05594DFE5D181114C762A/leafed?page=2"
+                    },
+                    "last": {
+                        "href": "/v1/users/54A05594DFE5D181114C762A/leafed?page=4"
+                    },
+                    "user": {
+                        "href": "/v1/users/54A05594DFE5D181114C762A"
+                    }
+                }
+            }
+
 ### User Activities [/users/{id}/activities{?page,size}]
 #### Get Activities [GET]
 + Parameters
