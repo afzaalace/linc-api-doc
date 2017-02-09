@@ -958,6 +958,91 @@ HOST: https://testapi.linc.world/v1
                 }
             }
 
+### Add Comment [/posts/{id}/comments]
+#### Add Comment [POST]
++ Parameters
+    
+    + id (required, hexadecimal, `56E1A4C8C6658CBD561ECF05`)
+
++ Request (application/json)
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
+    + Body
+    
+            {
+                "comment": "#This is a \n##comment \nthat mentions <@54A05594DFE5D181114C762A>, <@54A05594DFE5D181114C762B> and links <http://example.net/>, <https://www.linc.world/post/Tesla_s_SolarCity_deal_gets_a_boost_from_shareholder_advisory_firm/581DEDEA002B74604FE091C1.html>, <https://linc.world/p/1Z> "
+            }
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "id": 95,
+                "user": {
+                    "name": "Afzaal Ameer",
+                    "id": "54A0117ABD2BE3F251C3492A",
+                    "username": "afzaalace",
+                    "title": "Evolutionary UX/UI Geek, Entrepreneur, FOSS Contributor",
+                    "location": "Madrid, Madrid, Spain",
+                    "following_state": false,
+                    "image": "https://cdn.linc.world/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+                    "_links": {
+                        "self": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A"
+                        },
+                        "activities": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/activities"
+                        },
+                        "followers": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
+                        },
+                        "following": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/following"
+                        },
+                        "leafed": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
+                        },
+                        "posts": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
+                        }
+                    }
+                },
+                "post": {
+                    "id": "56E1A4C8C6658CBD561ECF05",
+                    "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
+                    "description": "Looks like another GISS miss, more than a few people are getting fed up with Jim Hansen and Gavin Schmidt and their climate shenanigans. Some very prominent NASA voices speak out in a scathing lett…",
+                    "created_date": "2016-03-10T16:46:00.000Z",
+                    "leafs_count": 1,
+                    "comments_count": 6,
+                    "shortURL": "dW",
+                    "timestamp": "2017-02-08T23:32:19.000Z",
+                    "leaf_state": false,
+                    "_links": {
+                        "self": {
+                            "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
+                        },
+                        "comments": {
+                            "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments"
+                        }
+                    }
+                },
+                "comment": "#This is a\ncomment\nthat mentions <@54A05594DFE5D181114C762A>, <@54A05594DFE5D181114C762B> and links <http://Example.net/>, <http://example.net/> \n",
+                "leafs_count": 0,
+                "created_date": "2017-02-08T23:32:19.000Z",
+                "meta": "",
+                "flag": 0,
+                "leaf_state": false,
+                "_links": {
+                    "self": {
+                        "href": "/v1/comments/95"
+                    }
+                }
+            }
+
 # Group Comments
 
 ## Comment [/comments/{id}]
@@ -1033,6 +1118,19 @@ HOST: https://testapi.linc.world/v1
                     }
                 }
             }
+
+### Remove Comment [DELETE]
++ Parameters
+    
+    + id (required, number, `95`)
+
++ Request
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 204
 
 # Group Notifications - Needs more work
 
