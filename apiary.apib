@@ -1131,6 +1131,160 @@ HOST: https://testapi.linc.world/v1
 
 + Response 204
 
+### Leaf Comment [/comments/{id}/leaf]
+#### Leaf Comment [POST]
++ Parameters
+    
+    + id (required, number, `25`)
+
++ Request
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+
+            {
+                "id": 25,
+                "user": {
+                    "name": "Pranay Krishen",
+                    "id": "54A05594DFE5D181114C762A",
+                    "username": "pranay",
+                    "title": "Founder | Linc",
+                    "location": "Madrid, Madrid, Spain",
+                    "following_state": true,
+                    "image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
+                    "_links": {
+                        "self": {
+                        "href": "/v1/users/54A05594DFE5D181114C762A"
+                        },
+                        "activities": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/activities"
+                        },
+                        "followers": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/followers"
+                        },
+                        "following": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                        },
+                        "leafed": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/leafed"
+                        },
+                        "posts": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/posts"
+                        }
+                    }
+                },
+                "post": {
+                    "id": "56E1A4C8C6658CBD561ECF05",
+                    "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
+                    "description": "Looks like another GISS miss, more than a few people are getting fed up with Jim Hansen and Gavin Schmidt and their climate shenanigans. Some very prominent NASA voices speak out in a scathing lett…",
+                    "created_date": "2016-03-10T16:46:00.000Z",
+                    "leafs_count": 1,
+                    "comments_count": 22,
+                    "shortURL": "dW",
+                    "timestamp": "2017-02-09T00:40:57.000Z",
+                    "leaf_state": false,
+                    "_links": {
+                        "self": {
+                            "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
+                        },
+                        "comments": {
+                            "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments"
+                        }
+                    }
+                },
+                "comment": "<a class=\"user\" target=\"_blank\" href=\"/danrogers\">Dan Rogers</a>  Could you point to any peer-reviewed publications on the subject of climate by any of these 49 signatories?",
+                "leafs_count": 1,
+                "created_date": "2016-03-11T11:43:58.000Z",
+                "meta": "",
+                "flag": 0,
+                "leaf_state": true,
+                    "_links": {
+                    "self": {
+                        "href": "/v1/comments/25"
+                    }
+                }
+            }
+            
+#### Unleaf Comment [DELETE]
++ Parameters
+    
+    + id (required, number, `25`)
+
++ Request
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+
+            {
+                "id": 25,
+                "user": {
+                    "name": "Pranay Krishen",
+                    "id": "54A05594DFE5D181114C762A",
+                    "username": "pranay",
+                    "title": "Founder | Linc",
+                    "location": "Madrid, Madrid, Spain",
+                    "following_state": true,
+                    "image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
+                    "_links": {
+                        "self": {
+                        "href": "/v1/users/54A05594DFE5D181114C762A"
+                        },
+                        "activities": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/activities"
+                        },
+                        "followers": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/followers"
+                        },
+                        "following": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                        },
+                        "leafed": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/leafed"
+                        },
+                        "posts": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/posts"
+                        }
+                    }
+                },
+                "post": {
+                    "id": "56E1A4C8C6658CBD561ECF05",
+                    "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
+                    "description": "Looks like another GISS miss, more than a few people are getting fed up with Jim Hansen and Gavin Schmidt and their climate shenanigans. Some very prominent NASA voices speak out in a scathing lett…",
+                    "created_date": "2016-03-10T16:46:00.000Z",
+                    "leafs_count": 1,
+                    "comments_count": 22,
+                    "shortURL": "dW",
+                    "timestamp": "2017-02-09T00:40:57.000Z",
+                    "leaf_state": false,
+                    "_links": {
+                        "self": {
+                            "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
+                        },
+                        "comments": {
+                            "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments"
+                        }
+                    }
+                },
+                "comment": "<a class=\"user\" target=\"_blank\" href=\"/danrogers\">Dan Rogers</a>  Could you point to any peer-reviewed publications on the subject of climate by any of these 49 signatories?",
+                "leafs_count": 1,
+                "created_date": "2016-03-11T11:43:58.000Z",
+                "meta": "",
+                "flag": 0,
+                "leaf_state": false,
+                    "_links": {
+                    "self": {
+                        "href": "/v1/comments/25"
+                    }
+                }
+            }
+
+
 # Group Notifications - Needs more work
 
 ## User Notifications [/notifications{?page,size}]
