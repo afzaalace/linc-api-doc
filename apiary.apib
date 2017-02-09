@@ -6,15 +6,15 @@ HOST: https://testapi.linc.world/v1
 # Group Authorization
 ## oAuth2 Password Grant [/auth/token]
 ### Get Token/Login [POST]
-    
+
 + Request (application/x-www-form-urlencoded)
-        
+
     + Form Data
 
-        + grant_type: "password"
-        + username: <user_email>
-        + password: <user_password>
-            
+            + grant_type: "password"
+            + username: <user_email>
+            + password: <user_password>
+
     + Headers
 
             Authorization: Basic <clientID>:<clientSecret>
@@ -39,28 +39,28 @@ HOST: https://testapi.linc.world/v1
 ## User Signup [/users/]
 
 ### Signup [POST]
-    
+
 + Request (application/x-www-form-urlencoded)
-        
+
     + Form Data
 
-        + name: <user_name>
-        + email: <user_email>
-        + password: <user_password>
-        + username: <user_username>
-            
+            + name: <user_name>
+            + email: <user_email>
+            + password: <user_password>
+            + username: <user_username>
+
     + Headers
 
             Authorization: Basic <clientID>:<clientSecret>
-            
+
     + Body
-    
+
             name=User%20Name&email=name%40email.com&password=password&username=username
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "access_token": "3sedq3otrh1qfsj61bljkpkjr7eqr3ggkh9b614",
                 "token_type": "Bearer",
@@ -70,20 +70,21 @@ HOST: https://testapi.linc.world/v1
 
 ## User [/users/{id}]
 ### Get User [GET]
+
 + Parameters
-    
+
     + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
 
-+ Request
-            
++ Request 
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "id": "54A0117ABD2BE3F251C3492A",
                 "name": "Afzaal Ameer",
@@ -150,16 +151,17 @@ HOST: https://testapi.linc.world/v1
             }
 
 ### Update User [PATCH]
+
 + Parameters
-    
+
     + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
 
 + Request (application/json)
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
-            
+
     + Body
 
             {
@@ -178,9 +180,9 @@ HOST: https://testapi.linc.world/v1
             }
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "id": "54A0117ABD2BE3F251C3492A",
                 "name": "Afzaal Ameer",
@@ -256,21 +258,21 @@ HOST: https://testapi.linc.world/v1
 ### Followers [/users/{id}/followers{?page,size}]
 #### Get Followers [GET]
 + Parameters
-    
+
     + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
     + page (optional, number) - Page number for pagination, default: 1
     + size (optional, number) - Items per page, default: 20
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "users": [
                     {
@@ -351,21 +353,21 @@ HOST: https://testapi.linc.world/v1
 ### Following [/users/{id}/following{?page,size}]
 #### Get Following [GET]
 + Parameters
-    
+
     + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
     + page (optional, number) - Page number for pagination, default: 1
     + size (optional, number) - Items per page, default: 20
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "users": [
                     {
@@ -446,21 +448,21 @@ HOST: https://testapi.linc.world/v1
 ### User Posts [/users/{id}/posts{?page,size}]
 #### Get Posts [GET]
 + Parameters
-    
+
     + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
     + page (optional, number) - Page number for pagination, default: 1
     + size (optional, number) - Items per page, default: 20
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "posts": [
                     {
@@ -523,21 +525,21 @@ HOST: https://testapi.linc.world/v1
 ### User Leafed Posts [/users/{id}/leafed{?page,size}]
 #### Get Leafed Posts [GET]
 + Parameters
-    
+
     + id (required, hexadecimal, `54A05594DFE5D181114C762A`)
     + page (optional, number) - Page number for pagination, default: 1
     + size (optional, number) - Items per page, default: 20
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "posts": [
                     {
@@ -680,21 +682,21 @@ HOST: https://testapi.linc.world/v1
 ### User Activities [/users/{id}/activities{?page,size}]
 #### Get Activities [GET]
 + Parameters
-    
+
     + id (required, hexadecimal, `54A05594DFE5D181114C762A`)
     + page (optional, number) - Page number for pagination, default: 1
     + size (optional, number) - Items per page, default: 20
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "activities": [
                     {
@@ -747,19 +749,19 @@ HOST: https://testapi.linc.world/v1
 ### Follow User [/users/{id}/follow]
 #### Follow User [POST]
 + Parameters
-    
+
     + id (required, hexadecimal, `54A0E4F54908B9D84E87E4A4`)
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "id": "54A0E4F54908B9D84E87E4A4",
                 "name": "Manu Akash",
@@ -814,19 +816,19 @@ HOST: https://testapi.linc.world/v1
 
 #### Unfollow User [DELETE]
 + Parameters
-    
+
     + id (required, hexadecimal, `54A0E4F54908B9D84E87E4A4`)
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "id": "54A0E4F54908B9D84E87E4A4",
                 "name": "Manu Akash",
@@ -884,19 +886,19 @@ HOST: https://testapi.linc.world/v1
 ## Post [/posts/{id}]
 ### Get Post [GET]
 + Parameters
-    
+
     + id (required, hexadecimal, `581DEDEA002B74604FE091C1`)
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "id": "581DEDEA002B74604FE091C1",
                 "source": "http://www.autonews.com/article/20161104/OEM05/161109912/teslas-solarcity-deal-gets-a-boost-from-shareholder-advisory-firm",
@@ -957,21 +959,21 @@ HOST: https://testapi.linc.world/v1
 ### Post Comments [/posts/{id}/comments{?page,size}]
 #### Get Comments [GET]
 + Parameters
-    
+
     + id (required, hexadecimal, `56E1A4C8C6658CBD561ECF05`)
     + page (optional, number) - Page number for pagination, default: 1
     + size (optional, number) - Items per page, default: 20
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "comments": [
                     {
@@ -1064,11 +1066,11 @@ HOST: https://testapi.linc.world/v1
 ### Add Comment [/posts/{id}/comments]
 #### Add Comment [POST]
 + Parameters
-    
+
     + id (required, hexadecimal, `56E1A4C8C6658CBD561ECF05`)
 
 + Request (application/json)
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
@@ -1080,9 +1082,9 @@ HOST: https://testapi.linc.world/v1
             }
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "id": 95,
                 "user": {
@@ -1151,19 +1153,19 @@ HOST: https://testapi.linc.world/v1
 ## Comment [/comments/{id}]
 ### Get Comment [GET]
 + Parameters
-    
+
     + id (required, number, `25`)
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "id": 25,
                 "user": {
@@ -1224,11 +1226,11 @@ HOST: https://testapi.linc.world/v1
 
 ### Remove Comment [DELETE]
 + Parameters
-    
+
     + id (required, number, `95`)
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
@@ -1238,16 +1240,18 @@ HOST: https://testapi.linc.world/v1
 ### Leaf Comment [/comments/{id}/leaf]
 #### Leaf Comment [POST]
 + Parameters
-    
+
     + id (required, number, `25`)
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
+
+    + Body
 
             {
                 "id": 25,
@@ -1314,16 +1318,18 @@ HOST: https://testapi.linc.world/v1
             
 #### Unleaf Comment [DELETE]
 + Parameters
-    
+
     + id (required, number, `25`)
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
+
+    + Body
 
             {
                 "id": 25,
@@ -1395,20 +1401,20 @@ HOST: https://testapi.linc.world/v1
 ### Get Notifications [GET]
 
 + Parameters
-    
+
     + page (optional, number) - Page number for pagination, default: 1
     + size (optional, number) - Items per page, default: 20
 
 + Request
-            
+   
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "notifications": [
                     {
@@ -1460,19 +1466,19 @@ HOST: https://testapi.linc.world/v1
 ## Notification [/notifications/{id}]
 ### Get Notification [GET]
 + Parameters
-    
+
     + id (required, number, `25`)
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "id": 12873,
                 "activity": 3366,
@@ -1496,20 +1502,20 @@ HOST: https://testapi.linc.world/v1
 ### Get Feed [GET]
 
 + Parameters
-    
+
     + page (optional, number) - Page number for pagination, default: 1
     + size (optional, number) - Items per page, default: 20
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "posts": [
                     {
@@ -1636,28 +1642,27 @@ HOST: https://testapi.linc.world/v1
                 }
             }
 
-
 # Group Search
 
 ## Search [/search{?q,page,size}]
 ### Search [GET]
 
 + Parameters
-    
+
     + q (required, string, `blue`) - Query for search
     + page (optional, number) - Page number for pagination, default: 1
     + size (optional, number) - Items per page, default: 20
 
 + Request
-            
+
     + Headers
 
             Authorization: Bearer <access_token>
 
 + Response 200 (application/json)
-    
+
     + Body
-        
+
             {
                 "results": [
                     {
