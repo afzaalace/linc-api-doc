@@ -149,6 +149,110 @@ HOST: https://testapi.linc.world/v1
                 }
             }
 
+### Update User [PATCH]
++ Parameters
+    
+    + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
+
++ Request (application/json)
+            
+    + Headers
+
+            Authorization: Bearer <access_token>
+            
+    + Body
+
+            {
+                "title": "Some Title 123",
+                "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum, lorem vitae pretium cursus, felis ipsum vehicula nibh, vel pretium lectus lorem at nisl.\n In non ligula lorem. Ut vulputate efficitur consequat. Curabitur non efficitur ipsum. Nam eget odio eu ligula congue rutrum.",
+                "location": "Madrid, Madrid, Spain",
+                "website": "http://www.afzaalace.com",
+                "facebook": "https://www.facebook.com/afzaalace",
+                "google": "https://plus.google.com/+AfzaalAmeer",
+                "twitter": "http://twitter.com/afzaalace",
+                "linkedin": "http://in.linkedin.com/in/afzaalace",
+                "pinterest": "",
+                "filters": {
+                    "Sector": "2,24,63,73,87,88,94,99,113"
+                }
+            }
+
++ Response 200 (application/json)
+    
+    + Body
+        
+            {
+                "id": "54A0117ABD2BE3F251C3492A",
+                "name": "Afzaal Ameer",
+                "username": "afzaalace",
+                "email": "afzaal@afzaalace.com",
+                "title": "Some Title 123",
+                "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum, lorem vitae pretium cursus, felis ipsum vehicula nibh, vel pretium lectus lorem at nisl.\n In non ligula lorem. Ut vulputate efficitur consequat. Curabitur non efficitur ipsum. Nam eget odio eu ligula congue rutrum.",
+                "location": "Madrid, Madrid, Spain",
+                "followers_count": 5,
+                "followings_count": 1,
+                "leafs_count": 5,
+                "membersince": "2014-12-28T14:19:38.000Z",
+                "rev": 5,
+                "website": "http://www.afzaalace.com",
+                "facebook": "https://www.facebook.com/afzaalace",
+                "google": "https://plus.google.com/+AfzaalAmeer",
+                "twitter": "http://twitter.com/afzaalace",
+                "linkedin": "http://in.linkedin.com/in/afzaalace",
+                "pinterest": "",
+                "views_count": 164,
+                "posted_count": 2,
+                "filters": {
+                    "Sector": "2,24,63,73,87,88,94,99,113"
+                },
+                "following_state": false,
+                "interests": {
+                    "sectors": [
+                        {
+                            "Sector": "Energy",
+                            "Share": 86
+                        },
+                        {
+                            "Sector": "Economy",
+                            "Share": 50
+                        },
+                        {
+                            "Sector": "Renewable",
+                            "Share": 48
+                        },
+                        {
+                            "Sector": "t5",
+                            "Share": 45
+                        },
+                        {
+                            "Sector": "Water",
+                            "Share": 42
+                        }
+                    ]
+                },
+                "image": "https://cdn-a.linc.world/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+                "_links": {
+                    "self": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A"
+                    },
+                    "activities": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/activities"
+                    },
+                    "followers": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
+                    },
+                    "following": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/following"
+                    },
+                    "leafed": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
+                    },
+                    "posts": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
+                    }
+                }
+            }
+
 ### Followers [/users/{id}/followers{?page,size}]
 #### Get Followers [GET]
 + Parameters
@@ -970,7 +1074,7 @@ HOST: https://testapi.linc.world/v1
             Authorization: Bearer <access_token>
 
     + Body
-    
+
             {
                 "comment": "#This is a \n##comment \nthat mentions <@54A05594DFE5D181114C762A>, <@54A05594DFE5D181114C762B> and links <http://example.net/>, <https://www.linc.world/post/Tesla_s_SolarCity_deal_gets_a_boost_from_shareholder_advisory_firm/581DEDEA002B74604FE091C1.html>, <https://linc.world/p/1Z> "
             }
