@@ -918,6 +918,88 @@ HOST: https://testapi.linc.world/v1
 			}
 
 # Group Posts
+## Add Post [/posts/]
+### Add Post[POST]
+
++ Request (application/json)
+
+	+ Headers
+
+			Authorization: Bearer <access_token>
+
+	+ Body
+
+			{
+				"source": "https://makandracards.com/makandra/38347-ajax-requests-with-patch-or-delete-method-will-not-redirect-with-get",
+				"title": "Digi Ocean",
+				"description": "Institutional Shareholder Services today recommended that investors in both companies approve Tesla Motors' plan to buy solar panel installer SolarCity for more than $2 billion.",
+				"tags": "2,24",
+				"image": "http://cdn-a.linc.net/t-content/61d8434858fd77575421da08542510f8-216.jpg"
+			}
+
++ Response 200 (application/json)
+
+	+ Body
+
+			{
+				"id": "589F605A8B46EB781B66F0C9",
+				"source": "https://makandracards.com/makandra/38347-ajax-requests-with-patch-or-delete-method-will-not-redirect-with-get",
+				"title": "Digi Ocean",
+				"user": {
+					"name": "Afzaal Ameer",
+					"id": "54A0117ABD2BE3F251C3492A",
+					"username": "afzaalace",
+					"title": "Some Title 123",
+					"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum, lorem vitae pretium cursus, felis ipsum vehicula nibh, vel pretium lectus lorem at nisl.\n In non ligula lorem. Ut vulputate efficitur consequat. Curabitur non efficitur ipsum. Nam eget odio eu ligula congue rutrum.",
+					"location": "Madrid, Madrid, Spain",
+					"followers_count": 5,
+					"followings_count": 1,
+					"leafs_count": 5,
+					"membersince": "2014-12-28T14:19:38.000Z",
+					"rev": 5,
+					"website": "http://www.afzaalace.com",
+					"following_state": false,
+					"image": "http://cdn-a.linc.net/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+					"_links": {
+						"self": {
+							"href": "/v1/users/54A0117ABD2BE3F251C3492A"
+						},
+						"activities": {
+							"href": "/v1/users/54A0117ABD2BE3F251C3492A/activities"
+						},
+						"followers": {
+							"href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
+						},
+						"following": {
+							"href": "/v1/users/54A0117ABD2BE3F251C3492A/following"
+						},
+						"leafed": {
+							"href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
+						},
+						"posts": {
+							"href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
+						}
+					}
+				},
+				"description": "Institutional Shareholder Services today recommended that investors in both companies approve Tesla Motors' plan to buy solar panel installer SolarCity for more than $2 billion.",
+				"created_date": "2017-02-11T19:04:58.000Z",
+				"image": "http://cdn-b.linc.net/posts/589F605A8B46EB781B66F0C9.jpg",
+				"rev": 0,
+				"views_count": 0,
+				"leafs_count": 0,
+				"comments_count": 0,
+				"shortURL": "Gf",
+				"timestamp": "2017-02-11T19:04:58.000Z",
+				"leaf_state": false,
+				"_links": {
+					"self": {
+						"href": "/v1/posts/589F605A8B46EB781B66F0C9"
+					},
+					"comments": {
+						"href": "/v1/posts/589F605A8B46EB781B66F0C9/comments"
+					}
+				}
+			}
 
 ## Post [/posts/{id}]
 ### Get Post [GET]
@@ -939,7 +1021,7 @@ HOST: https://testapi.linc.world/v1
 				"id": "581DEDEA002B74604FE091C1",
 				"source": "http://www.autonews.com/article/20161104/OEM05/161109912/teslas-solarcity-deal-gets-a-boost-from-shareholder-advisory-firm",
 				"title": "Tesla's SolarCity deal gets a boost from shareholder advisory firm",
-				"owner": {
+				"user": {
 					"name": "Dan Rogers",
 					"id": "55195B5A0BD9E6AC218174AC",
 					"username": "danrogers",
