@@ -97,11 +97,11 @@ HOST: https://testapi.linc.world/v1
 				"leafs_count": 5,
 				"membersince": "2014-12-28T14:19:38.000Z",
 				"rev": 5,
-				"website": "http://www.afzaalace.com",
+				"website": "https://www.afzaalace.com",
 				"facebook": "https://www.facebook.com/pixelexploiter",
 				"google": "https://plus.google.com/+AfzaalAmeer",
-				"twitter": "http://twitter.com/afzaalace",
-				"linkedin": "http://in.linkedin.com/in/afzaalace",
+				"twitter": "https://twitter.com/afzaalace",
+				"linkedin": "https://in.linkedin.com/in/afzaalace",
 				"pinterest": "",
 				"views": 164,
 				"posted_count": 2,
@@ -168,11 +168,11 @@ HOST: https://testapi.linc.world/v1
 				"title": "Some Title 123",
 				"bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum, lorem vitae pretium cursus, felis ipsum vehicula nibh, vel pretium lectus lorem at nisl.\n In non ligula lorem. Ut vulputate efficitur consequat. Curabitur non efficitur ipsum. Nam eget odio eu ligula congue rutrum.",
 				"location": "Madrid, Madrid, Spain",
-				"website": "http://www.afzaalace.com",
+				"website": "https://www.afzaalace.com",
 				"facebook": "https://www.facebook.com/afzaalace",
 				"google": "https://plus.google.com/+AfzaalAmeer",
-				"twitter": "http://twitter.com/afzaalace",
-				"linkedin": "http://in.linkedin.com/in/afzaalace",
+				"twitter": "https://twitter.com/afzaalace",
+				"linkedin": "https://in.linkedin.com/in/afzaalace",
 				"pinterest": "",
 				"filters": {
 					"Sector": "2,24,63,73,87,88,94,99,113"
@@ -196,11 +196,11 @@ HOST: https://testapi.linc.world/v1
 				"leafs_count": 5,
 				"membersince": "2014-12-28T14:19:38.000Z",
 				"rev": 5,
-				"website": "http://www.afzaalace.com",
+				"website": "https://www.afzaalace.com",
 				"facebook": "https://www.facebook.com/afzaalace",
 				"google": "https://plus.google.com/+AfzaalAmeer",
-				"twitter": "http://twitter.com/afzaalace",
-				"linkedin": "http://in.linkedin.com/in/afzaalace",
+				"twitter": "https://twitter.com/afzaalace",
+				"linkedin": "https://in.linkedin.com/in/afzaalace",
 				"pinterest": "",
 				"views_count": 164,
 				"posted_count": 2,
@@ -255,6 +255,42 @@ HOST: https://testapi.linc.world/v1
 				}
 			}
 
+### User Image [/users/{id}/image/]
+
++ Parameters
+
+	+ id (required, hexadecimal, `54A0117ABD2BE3F251C3492A` or `me`)
+
+#### User Image [POST]
+
++ Request (multipart/form-data; boundary=---BOUNDARY)
+
+	+ Headers
+
+			Authorization: Bearer <access_token>
+			
+	+ Body
+	
+			-----BOUNDARY
+			Content-Disposition: form-data; name="image"; filename="image.jpg"
+			Content-Type: image/jpeg
+			Content-Transfer-Encoding: base64
+
+			/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+			HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+			MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIA
+			AhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEB
+			AAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AL+AD//Z
+			-----BOUNDARY
+
++ Response 200 (application/json)
+
+	+ Body
+
+			{
+				"image": "https://cdn.linc.world/users/profile-54A0117ABD2BE3F251C3492A.jpg"
+			}
+
 ### Followers [/users/{id}/followers{?page,size}]
 #### Get Followers [GET]
 + Parameters
@@ -287,7 +323,7 @@ HOST: https://testapi.linc.world/v1
 						"leafs_count": 65,
 						"posted_count": 86,
 						"membersince": "2014-12-28T19:10:12.000Z",
-						"website": "http://www.linc.world",
+						"website": "https://www.linc.world",
 						"image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
 						"_links": {
 							"self": {
@@ -414,7 +450,7 @@ HOST: https://testapi.linc.world/v1
 						"leafs_count": 65,
 						"posted_count": 86,
 						"membersince": "2014-12-28T19:10:12.000Z",
-						"website": "http://www.linc.world",
+						"website": "https://www.linc.world",
 						"image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
 						"_links": {
 							"self": {
@@ -954,6 +990,37 @@ HOST: https://testapi.linc.world/v1
 						"href": "/v1/posts/581DEDEA002B74604FE091C1/comments"
 					}
 				}
+			}
+
+## Post Image [/posts/image/]
+### Post Image [POST]
+
++ Request (multipart/form-data; boundary=---BOUNDARY)
+
+	+ Headers
+
+			Authorization: Bearer <access_token>
+			
+	+ Body
+	
+			-----BOUNDARY
+			Content-Disposition: form-data; name="image"; filename="image.jpg"
+			Content-Type: image/jpeg
+			Content-Transfer-Encoding: base64
+
+			/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+			HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+			MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIA
+			AhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEB
+			AAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AL+AD//Z
+			-----BOUNDARY
+
++ Response 200 (application/json)
+
+	+ Body
+
+			{
+				"image": "https://cdn.linc.world/t-content/4d03d29e3a67cbbd603236d5c9e1fcd0.jpg"
 			}
 
 ### Post Comments [/posts/{id}/comments{?page,size}]
