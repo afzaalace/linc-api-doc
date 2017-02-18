@@ -933,41 +933,41 @@ HOST: https://testapi.linc.world/v1
 
     + Body
 
-			{
-				"messages": [
-					{
-						"id": 16,
-						"sender": "54A0117ABD2BE3F251C3492A",
-						"receiver": "54A05594DFE5D181114C762A",
-						"message": "#This is second\nmessage\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
-						"status": "0",
-						"created_date": "2017-02-18T15:57:06.000Z",
-						"_links": {
-							"self": {
-								"href": "/v1/messages/16"
-							}
-						}
-					},
-					{
-						"id": 15,
-						"sender": "54A0117ABD2BE3F251C3492A",
-						"receiver": "54A05594DFE5D181114C762A",
-						"message": "#This is a\nmessage\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
-						"status": "0",
-						"created_date": "2017-02-18T15:32:37.000Z",
-						"_links": {
-							"self": {
-								"href": "/v1/messages/15"
-							}
-						}
-					}
-				],
-				"_links": {
-					"self": {
-						"href": "/v1/users/54A05594DFE5D181114C762A/messages"
-					}
-				}
-			}
+            {
+                "messages": [
+                    {
+                        "id": 16,
+                        "sender": "54A0117ABD2BE3F251C3492A",
+                        "receiver": "54A05594DFE5D181114C762A",
+                        "message": "#This is second\nmessage\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
+                        "status": "0",
+                        "created_date": "2017-02-18T15:57:06.000Z",
+                        "_links": {
+                            "self": {
+                                "href": "/v1/messages/16"
+                            }
+                        }
+                    },
+                    {
+                        "id": 15,
+                        "sender": "54A0117ABD2BE3F251C3492A",
+                        "receiver": "54A05594DFE5D181114C762A",
+                        "message": "#This is a\nmessage\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
+                        "status": "0",
+                        "created_date": "2017-02-18T15:32:37.000Z",
+                        "_links": {
+                            "self": {
+                                "href": "/v1/messages/15"
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "/v1/users/54A05594DFE5D181114C762A/messages"
+                    }
+                }
+            }
 
 #### Send Message [POST]
 + Parameters
@@ -982,27 +982,27 @@ HOST: https://testapi.linc.world/v1
 
     + Body
 
-			{
-				"message":"#This is second\n##message \nthat has links <https://linc.world/p/N>, <http://example.net/> "
-			}
+            {
+                "message":"#This is second\n##message \nthat has links <https://linc.world/p/N>, <http://example.net/> "
+            }
 
 + Response 200 (application/json)
 
     + Body
 
-			{
-				"id": 16,
-				"sender": "54A0117ABD2BE3F251C3492A",
-				"receiver": "54A05594DFE5D181114C762A",
-				"message": "#This is second\nmessage\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
-				"status": "0",
-				"created_date": "2017-02-18T15:57:06.000Z"
-				"_links": {
-					"self": {
-						"href": "/v1/messages/16"
-					}
-				}
-			}
+            {
+                "id": 16,
+                "sender": "54A0117ABD2BE3F251C3492A",
+                "receiver": "54A05594DFE5D181114C762A",
+                "message": "#This is second\nmessage\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
+                "status": "0",
+                "created_date": "2017-02-18T15:57:06.000Z"
+                "_links": {
+                    "self": {
+                        "href": "/v1/messages/16"
+                    }
+                }
+            }
 
 # Group Posts
 ## Add Post [/posts/]
@@ -2266,57 +2266,57 @@ HOST: https://testapi.linc.world/v1
 
     + Body
 
-			{
-				"chats": [
-					{
-						"last_message": "#This is second\nmessage\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
-						"status": "0",
-						"updated_date": "2017-02-18T15:57:06.000Z",
-						"user": {
-							"name": "Pranay Krishen",
-							"id": "54A05594DFE5D181114C762A",
-							"username": "pranay",
-							"title": "Founder | Linc",
-							"location": "Madrid, Madrid, Spain",
-							"following_state": true,
-							"image": "http://cdn-a.linc.net/users/profile-54A05594DFE5D181114C762A.jpg",
-							"_links": {
-								"self": {
-									"href": "/v1/users/54A05594DFE5D181114C762A"
-								},
-								"activities": {
-									"href": "/v1/users/54A05594DFE5D181114C762A/activities"
-								},
-								"followers": {
-									"href": "/v1/users/54A05594DFE5D181114C762A/followers"
-								},
-								"following": {
-									"href": "/v1/users/54A05594DFE5D181114C762A/following"
-								},
-								"leafed": {
-									"href": "/v1/users/54A05594DFE5D181114C762A/leafed"
-								},
-								"messages": {
-									"href": "/v1/users/54A05594DFE5D181114C762A/messages"
-								},
-								"posts": {
-									"href": "/v1/users/54A05594DFE5D181114C762A/posts"
-								}
-							}
-						},
-						"_links": {
-							"messages": {
-								"href": "/v1/users/54A05594DFE5D181114C762A/messages"
-							}
-						}
-					}
-				],
-				"_links": {
-					"self": {
-						"href": "/v1/chats/"
-					}
-				}
-			}
+            {
+                "chats": [
+                    {
+                        "last_message": "#This is second\nmessage\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
+                        "status": "0",
+                        "updated_date": "2017-02-18T15:57:06.000Z",
+                        "user": {
+                            "name": "Pranay Krishen",
+                            "id": "54A05594DFE5D181114C762A",
+                            "username": "pranay",
+                            "title": "Founder | Linc",
+                            "location": "Madrid, Madrid, Spain",
+                            "following_state": true,
+                            "image": "http://cdn-a.linc.net/users/profile-54A05594DFE5D181114C762A.jpg",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A"
+                                },
+                                "activities": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/activities"
+                                },
+                                "followers": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/followers"
+                                },
+                                "following": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                                },
+                                "leafed": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/leafed"
+                                },
+                                "messages": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/messages"
+                                },
+                                "posts": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/posts"
+                                }
+                            }
+                        },
+                        "_links": {
+                            "messages": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A/messages"
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "/v1/chats/"
+                    }
+                }
+            }
 
 # Group Message
 
@@ -2337,19 +2337,19 @@ HOST: https://testapi.linc.world/v1
 
     + Body
 
-			{
-				"id": 13,
-				"sender": "54A0117ABD2BE3F251C3492A",
-				"receiver": "54A05594DFE5D181114C762A",
-				"message": "#This is a\nmessage\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
-				"status": "0",
-				"created_date": "2017-02-17T22:26:18.000Z"
-				"_links": {
-					"self": {
-						"href": "/v1/messages/13"
-					}
-				}
-			}
+            {
+                "id": 13,
+                "sender": "54A0117ABD2BE3F251C3492A",
+                "receiver": "54A05594DFE5D181114C762A",
+                "message": "#This is a\nmessage\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
+                "status": "0",
+                "created_date": "2017-02-17T22:26:18.000Z"
+                "_links": {
+                    "self": {
+                        "href": "/v1/messages/13"
+                    }
+                }
+            }
 
 ### Remove Message [DELETE]
 + Parameters
@@ -2373,21 +2373,21 @@ HOST: https://testapi.linc.world/v1
 
     + Body
 
-			{
-				"2": "Energy",
-				"24": "Environment",
-				"63": "Transportation",
-				"87": "Arts & Culture",
-				"88": "Health",
-				"89": "Education",
-				"91": "Travel",
-				"92": "Fashion",
-				"94": "Politics",
-				"98": "Architecture",
-				"99": "Technology",
-				"111": "Outdoors",
-				"117": "Business",
-				"118": "Agriculture",
-				"119": "Home",
-				"120": "Photography"
-			}
+            {
+                "2": "Energy",
+                "24": "Environment",
+                "63": "Transportation",
+                "87": "Arts & Culture",
+                "88": "Health",
+                "89": "Education",
+                "91": "Travel",
+                "92": "Fashion",
+                "94": "Politics",
+                "98": "Architecture",
+                "99": "Technology",
+                "111": "Outdoors",
+                "117": "Business",
+                "118": "Agriculture",
+                "119": "Home",
+                "120": "Photography"
+            }
