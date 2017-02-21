@@ -34,6 +34,68 @@ HOST: https://testapi.linc.world/v1
                 "refresh_token": "ieosthc9h1dksne0d0l7llqaig47sl9anaml73103q1ipoj40i512k10o"
             }
 
+
+## Social Auth [/auth/social]
+### Login [POST]
+
++ Request (application/x-www-form-urlencoded)
+
+    + Form Data
+
+            + social_network: "facebook"
+            + token: <access_token>
+            + action: "login"
+
+    + Headers
+
+            Authorization: Basic <clientID>:<clientSecret>
+
+    + Body
+
+            social_network=facebook&token=abcdef&action=login
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "access_token": "3sedq3otrh1qfsj61bljkpkjr7eqr3ggkh9b614",
+                "token_type": "Bearer",
+                "expires_in": 3599,
+                "refresh_token": "ieosthc9h1dksne0d0l7llqaig47sl9anaml73103q1ipoj40i512k10o"
+            }
+
+### Signup [POST]
+
++ Request (application/x-www-form-urlencoded)
+
+    + Form Data
+
+            + social_network: "facebook"
+            + token: <access_token>
+            + action: "signup"
+
+    + Headers
+
+            Authorization: Basic <clientID>:<clientSecret>
+
+    + Body
+
+            social_network=facebook&token=abcdef&action=signup
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "access_token": "3sedq3otrh1qfsj61bljkpkjr7eqr3ggkh9b614",
+                "token_type": "Bearer",
+                "expires_in": 3599,
+                "refresh_token": "ieosthc9h1dksne0d0l7llqaig47sl9anaml73103q1ipoj40i512k10o"
+            }
+
+
+
 # Group Users
 
 ## User Signup [/users/]
