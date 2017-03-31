@@ -129,13 +129,11 @@ HOST: https://testapi.linc.world/v1
                 "expires_in": 3599,
                 "refresh_token": "ieosthc9h1dksne0d0l7llqaig47sl9anaml73103q1ipoj40i512k10o"
             }
+## Me [/users/me]
 
-## User [/users/{id}]
-### Get User [GET]
+This works the same as /users/[your-own-id]
 
-+ Parameters
-
-    + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
+### Get [GET]
 
 + Request 
 
@@ -151,48 +149,53 @@ HOST: https://testapi.linc.world/v1
                 "id": "54A0117ABD2BE3F251C3492A",
                 "name": "Afzaal Ameer",
                 "username": "afzaalace",
-                "title": "Some Title",
-                "bio": "Lorem ipsum dolor met.",
+                "email": "afzaal@afzaalace.com",
+                "title": "Some Title 123",
+                "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum, lorem vitae pretium cursus, felis ipsum vehicula nibh, vel pretium lectus lorem at nisl.\n In non ligula lorem. Ut vulputate efficitur consequat. Curabitur non efficitur ipsum. Nam eget odio eu ligula congue rutrum.",
                 "location": "Madrid, Madrid, Spain",
                 "followers_count": 5,
-                "followings_count": 2,
+                "followings_count": 1,
                 "leafs_count": 5,
                 "membersince": "2014-12-28T14:19:38.000Z",
                 "rev": 5,
-                "website": "https://www.afzaalace.com",
-                "facebook": "https://www.facebook.com/pixelexploiter",
+                "website": "http://www.afzaalace.com",
+                "facebook": "https://www.facebook.com/afzaalace",
                 "google": "https://plus.google.com/+AfzaalAmeer",
-                "twitter": "https://twitter.com/afzaalace",
-                "linkedin": "https://in.linkedin.com/in/afzaalace",
+                "twitter": "http://twitter.com/afzaalace",
+                "linkedin": "http://in.linkedin.com/in/afzaalace",
                 "pinterest": "",
-                "views": 164,
+                "views_count": 164,
                 "posted_count": 2,
-                "following_state": false,
                 "interests": {
+                    "sectors": "2,24,63,73,87"
+                },
+                "following_state": false,
+                "leafed_count": 16,
+                "interest_graph": {
                     "sectors": [
                         {
-                            "Sector": "Energy",
-                            "Share": 86
+                            "sector": "2",
+                            "share": 86
                         },
                         {
-                            "Sector": "Economy",
-                            "Share": 50
+                            "sector": "85",
+                            "share": 50
                         },
                         {
-                            "Sector": "Renewable",
-                            "Share": 48
+                            "sector": "3",
+                            "share": 48
                         },
                         {
-                            "Sector": "Tage Name",
-                            "Share": 45
+                            "sector": "5",
+                            "share": 45
                         },
                         {
-                            "Sector": "Water",
-                            "Share": 42
+                            "sector": "18",
+                            "share": 42
                         }
                     ]
                 },
-                "image": "https://cdn.linc.world/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+                "image": "http://cdn-b.linc.net/users/profile-54A0117ABD2BE3F251C3492A.jpg",
                 "_links": {
                     "self": {
                         "href": "/v1/users/54A0117ABD2BE3F251C3492A"
@@ -203,8 +206,14 @@ HOST: https://testapi.linc.world/v1
                     "followers": {
                         "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
                     },
-                    "following": {
-                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/following"
+                    "followings": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/followings"
+                    },
+                    "leafed": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
+                    },
+                    "messages": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/messages"
                     },
                     "posts": {
                         "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
@@ -212,11 +221,7 @@ HOST: https://testapi.linc.world/v1
                 }
             }
 
-### Update User [PATCH]
-
-+ Parameters
-
-    + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
+### Update [PATCH]
 
 + Request (application/json)
 
@@ -236,8 +241,8 @@ HOST: https://testapi.linc.world/v1
                 "twitter": "https://twitter.com/afzaalace",
                 "linkedin": "https://in.linkedin.com/in/afzaalace",
                 "pinterest": "",
-                "filters": {
-                    "Sector": "2,24,63,73,87,88,94,99,113"
+                "interests": {
+                    "sectors": "2,24,63,73,87,88,94,99,113"
                 }
             }
 
@@ -258,43 +263,44 @@ HOST: https://testapi.linc.world/v1
                 "leafs_count": 5,
                 "membersince": "2014-12-28T14:19:38.000Z",
                 "rev": 5,
-                "website": "https://www.afzaalace.com",
+                "website": "http://www.afzaalace.com",
                 "facebook": "https://www.facebook.com/afzaalace",
                 "google": "https://plus.google.com/+AfzaalAmeer",
-                "twitter": "https://twitter.com/afzaalace",
-                "linkedin": "https://in.linkedin.com/in/afzaalace",
+                "twitter": "http://twitter.com/afzaalace",
+                "linkedin": "http://in.linkedin.com/in/afzaalace",
                 "pinterest": "",
                 "views_count": 164,
                 "posted_count": 2,
-                "filters": {
-                    "Sector": "2,24,63,73,87,88,94,99,113"
+                "interests": {
+                    "sectors": "2,24,63,73,87,88,94,99,113"
                 },
                 "following_state": false,
-                "interests": {
+                "leafed_count": 16,
+                "interest_graph": {
                     "sectors": [
                         {
-                            "Sector": "Energy",
-                            "Share": 86
+                            "sector": "2",
+                            "share": 86
                         },
                         {
-                            "Sector": "Economy",
-                            "Share": 50
+                            "sector": "85",
+                            "share": 50
                         },
                         {
-                            "Sector": "Renewable",
-                            "Share": 48
+                            "sector": "3",
+                            "share": 48
                         },
                         {
-                            "Sector": "t5",
-                            "Share": 45
+                            "sector": "5",
+                            "share": 45
                         },
                         {
-                            "Sector": "Water",
-                            "Share": 42
+                            "sector": "18",
+                            "share": 42
                         }
                     ]
                 },
-                "image": "https://cdn-a.linc.world/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+                "image": "http://cdn-b.linc.net/users/profile-54A0117ABD2BE3F251C3492A.jpg",
                 "_links": {
                     "self": {
                         "href": "/v1/users/54A0117ABD2BE3F251C3492A"
@@ -305,11 +311,14 @@ HOST: https://testapi.linc.world/v1
                     "followers": {
                         "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
                     },
-                    "following": {
-                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/following"
+                    "followings": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/followings"
                     },
                     "leafed": {
                         "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
+                    },
+                    "messages": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/messages"
                     },
                     "posts": {
                         "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
@@ -317,13 +326,9 @@ HOST: https://testapi.linc.world/v1
                 }
             }
 
-### User Image [/users/{id}/image/]
+### Profile Image [/users/me/image/]
 
-+ Parameters
-
-    + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A` or `me`)
-
-#### User Image [POST]
+#### Update Image [POST]
 
 + Request (multipart/form-data; boundary=---BOUNDARY)
 
@@ -353,6 +358,96 @@ HOST: https://testapi.linc.world/v1
                 "image": "https://cdn.linc.world/users/profile-54A0117ABD2BE3F251C3492A.jpg"
             }
 
+## User [/users/{id}]
+### Get User [GET]
+
++ Parameters
+
+    + id (required, hexadecimal, `54A0117ABD2BE3F251C3492A`)
+
++ Request 
+
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": "54A0117ABD2BE3F251C3492A",
+                "name": "Afzaal Ameer",
+                "username": "afzaalace",
+                "title": "Some Title 123",
+                "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum, lorem vitae pretium cursus, felis ipsum vehicula nibh, vel pretium lectus lorem at nisl.\n In non ligula lorem. Ut vulputate efficitur consequat. Curabitur non efficitur ipsum. Nam eget odio eu ligula congue rutrum.",
+                "location": "Madrid, Madrid, Spain",
+                "followers_count": 5,
+                "followings_count": 1,
+                "leafs_count": 5,
+                "membersince": "2014-12-28T14:19:38.000Z",
+                "rev": 5,
+                "website": "http://www.afzaalace.com",
+                "facebook": "https://www.facebook.com/afzaalace",
+                "google": "https://plus.google.com/+AfzaalAmeer",
+                "twitter": "http://twitter.com/afzaalace",
+                "linkedin": "http://in.linkedin.com/in/afzaalace",
+                "pinterest": "",
+                "views_count": 164,
+                "posted_count": 2,
+                "following_state": false,
+                "leafed_count": 16,
+                "interest_graph": {
+                    "sectors": [
+                        {
+                            "sector": "2",
+                            "share": 86
+                        },
+                        {
+                            "sector": "85",
+                            "share": 50
+                        },
+                        {
+                            "sector": "3",
+                            "share": 48
+                        },
+                        {
+                            "sector": "5",
+                            "share": 45
+                        },
+                        {
+                            "sector": "18",
+                            "share": 42
+                        }
+                    ]
+                },
+                "image": "http://cdn-b.linc.net/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+                "_links": {
+                    "self": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A"
+                    },
+                    "activities": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/activities"
+                    },
+                    "followers": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
+                    },
+                    "followings": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/followings"
+                    },
+                    "leafed": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
+                    },
+                    "messages": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/messages"
+                    },
+                    "posts": {
+                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
+                    }
+                }
+            }
+
+
 ### Followers [/users/{id}/followers{?page,size}]
 #### Get Followers [GET]
 + Parameters
@@ -380,13 +475,14 @@ HOST: https://testapi.linc.world/v1
                         "title": "Founder | Linc",
                         "bio": "Founder of Linc.world - media, community and resource management platform to support global sustainable development.<br/><br/>Previously, built and raced a solar-powered race car across the 3021km Australian Outback; served as Canada’s cleantech trade ambassador to Brazil; led the deployment of eco-schools across Jordan; researched advanced smart-grid and energy storage solutions with the FP7 commission in Greece; built a green-building residential complex in India; and founded EcoAlliance Cleantech, a photovoltaic systems integrator.<br/><br/>Mechatronics Engineering and Business graduate from Western University in Canada. Designated P.Eng. (EIT) and LEED AP. Lived and worked in Canada, India, Jordan, Chile, Brazil, UK, Denmark and Spain.",
                         "location": "Madrid, Madrid, Spain",
-                        "followers_count": 21,
+                        "followers_count": 22,
                         "followings_count": 71,
                         "leafs_count": 65,
                         "posted_count": 86,
                         "membersince": "2014-12-28T19:10:12.000Z",
-                        "website": "https://www.linc.world",
-                        "image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
+                        "website": "http://www.linc.world",
+                        "following_state": true,
+                        "image": "http://cdn-c.linc.net/users/profile-54A05594DFE5D181114C762A.jpg",
                         "_links": {
                             "self": {
                                 "href": "/v1/users/54A05594DFE5D181114C762A"
@@ -397,11 +493,134 @@ HOST: https://testapi.linc.world/v1
                             "followers": {
                                 "href": "/v1/users/54A05594DFE5D181114C762A/followers"
                             },
-                            "following": {
-                                "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                            "followings": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A/followings"
+                            },
+                            "leafed": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A/leafed"
+                            },
+                            "messages": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A/messages"
                             },
                             "posts": {
                                 "href": "/v1/users/54A05594DFE5D181114C762A/posts"
+                            }
+                        }
+                    },
+                    {
+                        "id": "54A0E4F54908B9D84E87E4A4",
+                        "name": "Manu Akash",
+                        "username": "ManuAkash",
+                        "title": "UX/UI Engineer at GO-JEK",
+                        "bio": "I believe strongly in keeping up with, and applying the latest design and technical trends to drive innovation via my work.As a true practitioner of the Latin phrase: \"ACTO NON VERBA\", I believe in letting my efforts speak for themselves.",
+                        "location": "Bangalore, Karnataka, India",
+                        "followers_count": 3,
+                        "followings_count": 6,
+                        "leafs_count": 150,
+                        "posted_count": 229,
+                        "membersince": "2014-12-29T05:21:57.000Z",
+                        "website": "",
+                        "following_state": false,
+                        "image": "http://cdn-d.linc.net/users/profile-54A0E4F54908B9D84E87E4A4.jpg",
+                        "_links": {
+                            "self": {
+                                "href": "/v1/users/54A0E4F54908B9D84E87E4A4"
+                            },
+                            "activities": {
+                                "href": "/v1/users/54A0E4F54908B9D84E87E4A4/activities"
+                            },
+                            "followers": {
+                                "href": "/v1/users/54A0E4F54908B9D84E87E4A4/followers"
+                            },
+                            "followings": {
+                                "href": "/v1/users/54A0E4F54908B9D84E87E4A4/followings"
+                            },
+                            "leafed": {
+                                "href": "/v1/users/54A0E4F54908B9D84E87E4A4/leafed"
+                            },
+                            "messages": {
+                                "href": "/v1/users/54A0E4F54908B9D84E87E4A4/messages"
+                            },
+                            "posts": {
+                                "href": "/v1/users/54A0E4F54908B9D84E87E4A4/posts"
+                            }
+                        }
+                    },
+                    {
+                        "id": "556E73B8F3A1990B3C2A9B35",
+                        "name": "Affaan Ameer",
+                        "username": "affaan",
+                        "title": "save energy",
+                        "bio": "",
+                        "location": "Lucknow, Uttar Pradesh, India",
+                        "followers_count": 2,
+                        "followings_count": 1,
+                        "leafs_count": 0,
+                        "posted_count": 0,
+                        "membersince": "2015-06-03T03:25:44.000Z",
+                        "website": "",
+                        "following_state": false,
+                        "image": "http://cdn-a.linc.net/users/profile-556E73B8F3A1990B3C2A9B35.jpg",
+                        "_links": {
+                            "self": {
+                                "href": "/v1/users/556E73B8F3A1990B3C2A9B35"
+                            },
+                            "activities": {
+                                "href": "/v1/users/556E73B8F3A1990B3C2A9B35/activities"
+                            },
+                            "followers": {
+                                "href": "/v1/users/556E73B8F3A1990B3C2A9B35/followers"
+                            },
+                            "followings": {
+                                "href": "/v1/users/556E73B8F3A1990B3C2A9B35/followings"
+                            },
+                            "leafed": {
+                                "href": "/v1/users/556E73B8F3A1990B3C2A9B35/leafed"
+                            },
+                            "messages": {
+                                "href": "/v1/users/556E73B8F3A1990B3C2A9B35/messages"
+                            },
+                            "posts": {
+                                "href": "/v1/users/556E73B8F3A1990B3C2A9B35/posts"
+                            }
+                        }
+                    },
+                    {
+                        "id": "5624BC3CC52336973970C58F",
+                        "name": "Ashiya Shaikh",
+                        "username": "ashiya",
+                        "title": "QuezX.com - Hiring for Startups!",
+                        "bio": "",
+                        "location": "Mumbai, Maharashtra, India",
+                        "followers_count": 0,
+                        "followings_count": 2,
+                        "leafs_count": 0,
+                        "posted_count": 0,
+                        "membersince": "2015-10-19T09:47:40.000Z",
+                        "website": "",
+                        "following_state": false,
+                        "image": "http://cdn-b.linc.net/users/profile-5624BC3CC52336973970C58F.jpg",
+                        "_links": {
+                            "self": {
+                                "href": "/v1/users/5624BC3CC52336973970C58F"
+                            },
+                            "activities": {
+                                "href": "/v1/users/5624BC3CC52336973970C58F/activities"
+                            },
+                            "followers": {
+                                "href": "/v1/users/5624BC3CC52336973970C58F/followers"
+                            },
+                            "followings": {
+                                "href": "/v1/users/5624BC3CC52336973970C58F/followings"
+                            },
+                            "leafed": {
+                                "href": "/v1/users/5624BC3CC52336973970C58F/leafed"
+                            },
+                            "messages": {
+                                "href": "/v1/users/5624BC3CC52336973970C58F/messages"
+                            },
+                            "posts": {
+                                "href": "/v1/users/5624BC3CC52336973970C58F/posts"
                             }
                         }
                     },
@@ -416,9 +635,10 @@ HOST: https://testapi.linc.world/v1
                         "followings_count": 3,
                         "leafs_count": 0,
                         "posted_count": 0,
-                        "membersince": "2014-12-28T19:10:12.000Z",
+                        "membersince": "2016-10-18T18:19:49.000Z",
                         "website": "",
-                        "image": "https://cdn.linc.world/users/profile-580667C5F324DBE8290FA3A9.jpg",
+                        "following_state": false,
+                        "image": "http://cdn-c.linc.net/users/profile-580667C5F324DBE8290FA3A9.jpg",
                         "_links": {
                             "self": {
                                 "href": "/v1/users/580667C5F324DBE8290FA3A9"
@@ -429,8 +649,14 @@ HOST: https://testapi.linc.world/v1
                             "followers": {
                                 "href": "/v1/users/580667C5F324DBE8290FA3A9/followers"
                             },
-                            "following": {
-                                "href": "/v1/users/580667C5F324DBE8290FA3A9/following"
+                            "followings": {
+                                "href": "/v1/users/580667C5F324DBE8290FA3A9/followings"
+                            },
+                            "leafed": {
+                                "href": "/v1/users/580667C5F324DBE8290FA3A9/leafed"
+                            },
+                            "messages": {
+                                "href": "/v1/users/580667C5F324DBE8290FA3A9/messages"
                             },
                             "posts": {
                                 "href": "/v1/users/580667C5F324DBE8290FA3A9/posts"
@@ -469,51 +695,20 @@ HOST: https://testapi.linc.world/v1
             {
                 "users": [
                     {
-                        "id": "54A0E4F54908B9D84E87E4A4",
-                        "name": "Manu Akash",
-                        "username": "ManuAkash",
-                        "title": "UX/UI Engineer at GO-JEK",
-                        "bio": "I believe strongly in keeping up with, and applying the latest design and technical trends to drive innovation via my work.As a true practitioner of the Latin phrase: \"ACTO NON VERBA\", I believe in letting my efforts speak for themselves.",
-                        "location": "Bangalore, Karnataka, India",
-                        "followers_count": 4,
-                        "followings_count": 6,
-                        "leafs_count": 148,
-                        "posted_count": 229,
-                        "membersince": "2014-12-29T05:21:57.000Z",
-                        "website": "",
-                        "image": "https://cdn.linc.world/users/profile-54A0E4F54908B9D84E87E4A4.jpg",
-                        "_links": {
-                            "self": {
-                                "href": "/v1/users/54A0E4F54908B9D84E87E4A4"
-                            },
-                            "activities": {
-                                "href": "/v1/users/54A0E4F54908B9D84E87E4A4/activities"
-                            },
-                            "followers": {
-                                "href": "/v1/users/54A0E4F54908B9D84E87E4A4/followers"
-                            },
-                            "following": {
-                                "href": "/v1/users/54A0E4F54908B9D84E87E4A4/following"
-                            },
-                            "posts": {
-                                "href": "/v1/users/54A0E4F54908B9D84E87E4A4/posts"
-                            }
-                        }
-                    },
-                    {
                         "id": "54A05594DFE5D181114C762A",
                         "name": "Pranay Krishen",
                         "username": "pranay",
                         "title": "Founder | Linc",
                         "bio": "Founder of Linc.world - media, community and resource management platform to support global sustainable development.<br/><br/>Previously, built and raced a solar-powered race car across the 3021km Australian Outback; served as Canada’s cleantech trade ambassador to Brazil; led the deployment of eco-schools across Jordan; researched advanced smart-grid and energy storage solutions with the FP7 commission in Greece; built a green-building residential complex in India; and founded EcoAlliance Cleantech, a photovoltaic systems integrator.<br/><br/>Mechatronics Engineering and Business graduate from Western University in Canada. Designated P.Eng. (EIT) and LEED AP. Lived and worked in Canada, India, Jordan, Chile, Brazil, UK, Denmark and Spain.",
                         "location": "Madrid, Madrid, Spain",
-                        "followers_count": 21,
+                        "followers_count": 22,
                         "followings_count": 71,
                         "leafs_count": 65,
                         "posted_count": 86,
                         "membersince": "2014-12-28T19:10:12.000Z",
-                        "website": "https://www.linc.world",
-                        "image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
+                        "website": "http://www.linc.world",
+                        "following_state": true,
+                        "image": "http://cdn-d.linc.net/users/profile-54A05594DFE5D181114C762A.jpg",
                         "_links": {
                             "self": {
                                 "href": "/v1/users/54A05594DFE5D181114C762A"
@@ -524,8 +719,14 @@ HOST: https://testapi.linc.world/v1
                             "followers": {
                                 "href": "/v1/users/54A05594DFE5D181114C762A/followers"
                             },
-                            "following": {
-                                "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                            "followings": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A/followings"
+                            },
+                            "leafed": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A/leafed"
+                            },
+                            "messages": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A/messages"
                             },
                             "posts": {
                                 "href": "/v1/users/54A05594DFE5D181114C762A/posts"
@@ -564,58 +765,87 @@ HOST: https://testapi.linc.world/v1
             {
                 "posts": [
                     {
-                        "id": "54C74FA58B8FC61F3809F677",
-                        "source": "http://www.huffingtonpost.com/nicole-lederer/military-private-sector-a_b_6369094.html",
-                        "title": "Military, Private Sector Are Close Partners in Securing America's Clean Energy Future",
-                        "description": "The military has ambitious energy goals - like the Navy sourcing 50 percent of its on-shore energy from alternative sources by 2020, or the Army and Air Force each aiming to have 1 GW of renewable energy installed on their bases by 2025.",
-                        "created_date": "2015-01-27T08:43:17.000Z",
-                        "image": "https://cdn.linc.world/articles/54C74FA58B8FC61F3809F677.jpg",
+                        "id": "5835A14EFE73BC5A3372CF97",
+                        "source": "http://www.bloomberg.com/graphics/2015-whats-warming-the-world/",
+                        "title": "What's Really Warming the World?",
+                        "description": "Climate deniers blame natural factors; NASA data proves otherwise",
+                        "created_date": "2016-11-23T14:01:50.000Z",
+                        "image": "http://cdn-a.linc.net/posts/5835A14EFE73BC5A3372CF97.jpg",
                         "rev": 0,
-                        "height": 252,
-                        "views_count": 384,
-                        "leafs_count": 3,
+                        "views_count": 69,
+                        "leafs_count": 0,
                         "comments_count": 0,
-                        "shortURL": "4g",
-                        "timestamp": "2017-01-16T15:02:44.000Z",
+                        "shortURL": "ED",
+                        "timestamp": "2017-01-16T18:43:30.000Z",
+                        "leaf_state": false,
                         "_links": {
                             "self": {
-                                "href": "/v1/posts/54C74FA58B8FC61F3809F677"
+                                "href": "/v1/posts/5835A14EFE73BC5A3372CF97"
                             },
                             "comments": {
-                                "href": "/v1/posts/54C74FA58B8FC61F3809F677/comments"
+                                "href": "/v1/posts/5835A14EFE73BC5A3372CF97/comments"
                             }
                         }
                     },
                     {
-                        "id": "54A0161EB72B1BBF60F5A0B4",
-                        "source": "http://ensia.com/notable/treating-environmental-crime-like-other-crime/",
-                        "title": "Treating environmental crime like other crime",
-                        "description": "The illegal exportation of waste throughout the European Union, the trafficking of endangered species, and surface-water pollution were all recognized in a&hellip;",
-                        "created_date": "2014-12-28T14:39:26.000Z",
-                        "image": "https://cdn.linc.world/articles/54A0161EB72B1BBF60F5A0B4.jpg",
+                        "id": "576C48CA423FFECF5C8D4ECC",
+                        "source": "http://blog.solarimpulse.com/post/146345887330/completing-atlantic-crossing",
+                        "title": "Completing the Atlantic Crossing: more than an aviation first! | Solar Impulse",
+                        "description": "The zero-fuel aeroplane, Solar Impulse, has touched down in Spain, completing the 70-hour Atlantic leg of its historic bid to circle the globe.",
+                        "created_date": "2016-06-23T20:38:34.000Z",
+                        "image": "http://cdn-b.linc.net/posts/576C48CA423FFECF5C8D4ECC.jpg",
                         "rev": 0,
-                        "height": 288,
-                        "views_count": 462,
-                        "leafs_count": 2,
+                        "views_count": 72,
+                        "leafs_count": 0,
                         "comments_count": 0,
-                        "shortURL": "1",
-                        "timestamp": "2017-01-16T15:03:49.000Z",
+                        "shortURL": "rb",
+                        "timestamp": "2017-01-15T13:14:36.000Z",
+                        "leaf_state": false,
                         "_links": {
                             "self": {
-                                "href": "/v1/posts/54A0161EB72B1BBF60F5A0B4"
+                                "href": "/v1/posts/576C48CA423FFECF5C8D4ECC"
                             },
                             "comments": {
-                                "href": "/v1/posts/54A0161EB72B1BBF60F5A0B4/comments"
+                                "href": "/v1/posts/576C48CA423FFECF5C8D4ECC/comments"
+                            }
+                        }
+                    },
+                    {
+                        "id": "57545C01F35CF1833F077DA9",
+                        "source": "http://www.treehugger.com/lawn-garden/homemade-herbicide-kill-weeds-without-killing-earth.html",
+                        "title": "6 Homemade herbicides: Kill the weeds without killing the Earth",
+                        "description": "It's been said that weeds are just plants whose virtues have not yet been discovered, but if you don't want to find out what those virtues are, you might want to use one of these homemade herbicides.",
+                        "created_date": "2016-06-05T17:06:09.000Z",
+                        "image": "http://cdn-c.linc.net/posts/57545C01F35CF1833F077DA9.jpg",
+                        "rev": 0,
+                        "views_count": 181,
+                        "leafs_count": 0,
+                        "comments_count": 0,
+                        "shortURL": "p3",
+                        "timestamp": "2017-01-12T04:32:51.000Z",
+                        "leaf_state": false,
+                        "_links": {
+                            "self": {
+                                "href": "/v1/posts/57545C01F35CF1833F077DA9"
+                            },
+                            "comments": {
+                                "href": "/v1/posts/57545C01F35CF1833F077DA9/comments"
                             }
                         }
                     }
                 ],
                 "_links": {
                     "self": {
-                        "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
+                        "href": "/v1/users/54A05594DFE5D181114C762A/posts"
+                    },
+                    "next": {
+                        "href": "/v1/users/54A05594DFE5D181114C762A/posts?page=2"
+                    },
+                    "last": {
+                        "href": "/v1/users/54A05594DFE5D181114C762A/posts?page=5"
                     },
                     "user": {
-                        "href": "/v1/users/54A0117ABD2BE3F251C3492A"
+                        "href": "/v1/users/54A05594DFE5D181114C762A"
                     }
                 }
             }
@@ -647,13 +877,14 @@ HOST: https://testapi.linc.world/v1
                             "title": "Solo across the Atlantic in a Folkboat – Yachting World",
                             "description": "Carrying his guitar, some fine wine, an old French racing bike and a sextant, Leo Goolden sets out on his first solo Atlantic crossing in a 24ft Folkboat",
                             "created_date": "2016-11-16T13:06:53.000Z",
-                            "image": "https://cdn.linc.world/articles/582C59ED4A46D6D7064643C8.jpg",
+                            "image": "http://cdn-c.linc.net/posts/582C59ED4A46D6D7064643C8.jpg",
                             "rev": 0,
                             "views_count": 45,
                             "leafs_count": 1,
                             "comments_count": 0,
                             "shortURL": "Dt",
                             "timestamp": "2017-01-15T16:41:16.000Z",
+                            "leaf_state": false,
                             "user": {
                                 "name": "Dan Rogers",
                                 "id": "55195B5A0BD9E6AC218174AC",
@@ -661,13 +892,13 @@ HOST: https://testapi.linc.world/v1
                                 "title": "Co-Founder of Linc",
                                 "bio": "",
                                 "location": "Madrid, Madrid, Spain",
-                                "followers_count": 6,
+                                "followers_count": 7,
                                 "followings_count": 4,
-                                "leafs_count": 48,
+                                "leafs_count": 50,
                                 "membersince": "2015-03-30T14:19:06.000Z",
                                 "rev": 2,
                                 "website": "",
-                                "image": "https://cdn.linc.world/users/profile-55195B5A0BD9E6AC218174AC.jpg",
+                                "image": "http://cdn-c.linc.net/users/profile-55195B5A0BD9E6AC218174AC.jpg",
                                 "_links": {
                                     "self": {
                                         "href": "/v1/users/55195B5A0BD9E6AC218174AC"
@@ -678,11 +909,14 @@ HOST: https://testapi.linc.world/v1
                                     "followers": {
                                         "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
                                     },
-                                    "following": {
-                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/following"
+                                    "followings": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/followings"
                                     },
                                     "leafed": {
                                         "href": "/v1/users/55195B5A0BD9E6AC218174AC/leafed"
+                                    },
+                                    "messages": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/messages"
                                     },
                                     "posts": {
                                         "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
@@ -707,13 +941,14 @@ HOST: https://testapi.linc.world/v1
                             "title": "Let's make every weekend a three day weekend",
                             "description": "It’s good for the environment and could be for the workers too.",
                             "created_date": "2016-09-05T09:24:45.000Z",
-                            "image": "https://cdn.linc.world/articles/57CD39DD848534652600324A.jpg",
+                            "image": "http://cdn-d.linc.net/posts/57CD39DD848534652600324A.jpg",
                             "rev": 0,
                             "views_count": 100,
                             "leafs_count": 1,
                             "comments_count": 0,
                             "shortURL": "xe",
                             "timestamp": "2017-01-16T20:05:30.000Z",
+                            "leaf_state": false,
                             "user": {
                                 "name": "Dan Rogers",
                                 "id": "55195B5A0BD9E6AC218174AC",
@@ -721,13 +956,13 @@ HOST: https://testapi.linc.world/v1
                                 "title": "Co-Founder of Linc",
                                 "bio": "",
                                 "location": "Madrid, Madrid, Spain",
-                                "followers_count": 6,
+                                "followers_count": 7,
                                 "followings_count": 4,
-                                "leafs_count": 48,
+                                "leafs_count": 50,
                                 "membersince": "2015-03-30T14:19:06.000Z",
                                 "rev": 2,
                                 "website": "",
-                                "image": "https://cdn.linc.world/users/profile-55195B5A0BD9E6AC218174AC.jpg",
+                                "image": "http://cdn-c.linc.net/users/profile-55195B5A0BD9E6AC218174AC.jpg",
                                 "_links": {
                                     "self": {
                                         "href": "/v1/users/55195B5A0BD9E6AC218174AC"
@@ -738,11 +973,14 @@ HOST: https://testapi.linc.world/v1
                                     "followers": {
                                         "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
                                     },
-                                    "following": {
-                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/following"
+                                    "followings": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/followings"
                                     },
                                     "leafed": {
                                         "href": "/v1/users/55195B5A0BD9E6AC218174AC/leafed"
+                                    },
+                                    "messages": {
+                                        "href": "/v1/users/55195B5A0BD9E6AC218174AC/messages"
                                     },
                                     "posts": {
                                         "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
@@ -760,6 +998,70 @@ HOST: https://testapi.linc.world/v1
                         },
                         "leafed_date": "2016-09-05T16:22:42.000Z"
                     },
+                    {
+                        "post": {
+                            "id": "5787CE2D0255887741FAAE63",
+                            "source": "https://www.technologyreview.com/s/601881/find-out-which-appliance-is-sucking-all-your-power/",
+                            "title": "What’s sucking all your electricity? A new device will tell you exactly which appliance it is",
+                            "description": "Sense’s $299 gadget identifies individual devices in the home and exactly how much electricity they are using.",
+                            "created_date": "2016-07-14T17:38:53.000Z",
+                            "image": "http://cdn-a.linc.net/posts/5787CE2D0255887741FAAE63.jpg",
+                            "rev": 0,
+                            "views_count": 100,
+                            "leafs_count": 1,
+                            "comments_count": 0,
+                            "shortURL": "th",
+                            "timestamp": "2017-01-16T14:00:35.000Z",
+                            "leaf_state": false,
+                            "user": {
+                                "name": "Linc Editor",
+                                "id": "566D56B98A016D2820208EF0",
+                                "username": "linc",
+                                "title": "",
+                                "bio": "",
+                                "location": "",
+                                "followers_count": 0,
+                                "followings_count": 0,
+                                "leafs_count": 87,
+                                "membersince": "2015-12-13T11:30:01.000Z",
+                                "rev": 2,
+                                "website": "",
+                                "image": "http://cdn-d.linc.net/users/profile-566D56B98A016D2820208EF0.jpg",
+                                "_links": {
+                                    "self": {
+                                        "href": "/v1/users/566D56B98A016D2820208EF0"
+                                    },
+                                    "activities": {
+                                        "href": "/v1/users/566D56B98A016D2820208EF0/activities"
+                                    },
+                                    "followers": {
+                                        "href": "/v1/users/566D56B98A016D2820208EF0/followers"
+                                    },
+                                    "followings": {
+                                        "href": "/v1/users/566D56B98A016D2820208EF0/followings"
+                                    },
+                                    "leafed": {
+                                        "href": "/v1/users/566D56B98A016D2820208EF0/leafed"
+                                    },
+                                    "messages": {
+                                        "href": "/v1/users/566D56B98A016D2820208EF0/messages"
+                                    },
+                                    "posts": {
+                                        "href": "/v1/users/566D56B98A016D2820208EF0/posts"
+                                    }
+                                }
+                            },
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/posts/5787CE2D0255887741FAAE63"
+                                },
+                                "comments": {
+                                    "href": "/v1/posts/5787CE2D0255887741FAAE63/comments"
+                                }
+                            }
+                        },
+                        "leafed_date": "2016-07-15T05:34:05.000Z"
+                    }
                 ],
                 "_links": {
                     "self": {
@@ -867,7 +1169,7 @@ HOST: https://testapi.linc.world/v1
                 "title": "UX/UI Engineer at GO-JEK",
                 "bio": "I believe strongly in keeping up with, and applying the latest design and technical trends to drive innovation via my work.As a true practitioner of the Latin phrase: \"ACTO NON VERBA\", I believe in letting my efforts speak for themselves.",
                 "location": "Bangalore, Karnataka, India",
-                "followers_count": 3,
+                "followers_count": 4,
                 "followings_count": 6,
                 "leafs_count": 150,
                 "membersince": "2014-12-29T05:21:57.000Z",
@@ -881,15 +1183,32 @@ HOST: https://testapi.linc.world/v1
                 "views_count": 212,
                 "posted_count": 229,
                 "following_state": true,
-                "interests": {
+                "leafed_count": 19,
+                "interest_graph": {
                     "sectors": [
                         {
-                            "Sector": "Energy",
-                            "Share": 43
+                            "sector": "4",
+                            "share": 86
+                        },
+                        {
+                            "sector": "51",
+                            "share": 68
+                        },
+                        {
+                            "sector": "49",
+                            "share": 50
+                        },
+                        {
+                            "sector": "2",
+                            "share": 43
+                        },
+                        {
+                            "sector": "45",
+                            "share": 42
                         }
                     ]
                 },
-                "image": "https://cdn.linc.world/users/profile-54A0E4F54908B9D84E87E4A4.jpg",
+                "image": "http://cdn-b.linc.net/users/profile-54A0E4F54908B9D84E87E4A4.jpg",
                 "_links": {
                     "self": {
                         "href": "/v1/users/54A0E4F54908B9D84E87E4A4"
@@ -900,11 +1219,14 @@ HOST: https://testapi.linc.world/v1
                     "followers": {
                         "href": "/v1/users/54A0E4F54908B9D84E87E4A4/followers"
                     },
-                    "following": {
-                        "href": "/v1/users/54A0E4F54908B9D84E87E4A4/following"
+                    "followings": {
+                        "href": "/v1/users/54A0E4F54908B9D84E87E4A4/followings"
                     },
                     "leafed": {
                         "href": "/v1/users/54A0E4F54908B9D84E87E4A4/leafed"
+                    },
+                    "messages": {
+                        "href": "/v1/users/54A0E4F54908B9D84E87E4A4/messages"
                     },
                     "posts": {
                         "href": "/v1/users/54A0E4F54908B9D84E87E4A4/posts"
@@ -934,7 +1256,7 @@ HOST: https://testapi.linc.world/v1
                 "title": "UX/UI Engineer at GO-JEK",
                 "bio": "I believe strongly in keeping up with, and applying the latest design and technical trends to drive innovation via my work.As a true practitioner of the Latin phrase: \"ACTO NON VERBA\", I believe in letting my efforts speak for themselves.",
                 "location": "Bangalore, Karnataka, India",
-                "followers_count": 3,
+                "followers_count": 4,
                 "followings_count": 6,
                 "leafs_count": 150,
                 "membersince": "2014-12-29T05:21:57.000Z",
@@ -948,15 +1270,32 @@ HOST: https://testapi.linc.world/v1
                 "views_count": 212,
                 "posted_count": 229,
                 "following_state": false,
-                "interests": {
+                "leafed_count": 19,
+                "interest_graph": {
                     "sectors": [
                         {
-                            "Sector": "Energy",
-                            "Share": 43
+                            "sector": "4",
+                            "share": 86
+                        },
+                        {
+                            "sector": "51",
+                            "share": 68
+                        },
+                        {
+                            "sector": "49",
+                            "share": 50
+                        },
+                        {
+                            "sector": "2",
+                            "share": 43
+                        },
+                        {
+                            "sector": "45",
+                            "share": 42
                         }
                     ]
                 },
-                "image": "https://cdn.linc.world/users/profile-54A0E4F54908B9D84E87E4A4.jpg",
+                "image": "http://cdn-b.linc.net/users/profile-54A0E4F54908B9D84E87E4A4.jpg",
                 "_links": {
                     "self": {
                         "href": "/v1/users/54A0E4F54908B9D84E87E4A4"
@@ -967,11 +1306,14 @@ HOST: https://testapi.linc.world/v1
                     "followers": {
                         "href": "/v1/users/54A0E4F54908B9D84E87E4A4/followers"
                     },
-                    "following": {
-                        "href": "/v1/users/54A0E4F54908B9D84E87E4A4/following"
+                    "followings": {
+                        "href": "/v1/users/54A0E4F54908B9D84E87E4A4/followings"
                     },
                     "leafed": {
                         "href": "/v1/users/54A0E4F54908B9D84E87E4A4/leafed"
+                    },
+                    "messages": {
+                        "href": "/v1/users/54A0E4F54908B9D84E87E4A4/messages"
                     },
                     "posts": {
                         "href": "/v1/users/54A0E4F54908B9D84E87E4A4/posts"
@@ -1082,7 +1424,9 @@ HOST: https://testapi.linc.world/v1
                 "source": "https://makandracards.com/makandra/38347-ajax-requests-with-patch-or-delete-method-will-not-redirect-with-get",
                 "title": "Digi Ocean",
                 "description": "Institutional Shareholder Services today recommended that investors in both companies approve Tesla Motors' plan to buy solar panel installer SolarCity for more than $2 billion.",
-                "tags": "2,24",
+                "interests": {
+                    "sectors":"2,24"
+                },
                 "image": "http://cdn-a.linc.net/t-content/61d8434858fd77575421da08542510f8-216.jpg"
             }
 
@@ -1091,61 +1435,76 @@ HOST: https://testapi.linc.world/v1
     + Body
 
             {
-                "id": "589F605A8B46EB781B66F0C9",
-                "source": "https://makandracards.com/makandra/38347-ajax-requests-with-patch-or-delete-method-will-not-redirect-with-get",
-                "title": "Digi Ocean",
+                "id": "581DEDEA002B74604FE091C1",
+                "source": "http://www.autonews.com/article/20161104/OEM05/161109912/teslas-solarcity-deal-gets-a-boost-from-shareholder-advisory-firm",
+                "title": "Tesla's SolarCity deal gets a boost from shareholder advisory firm",
                 "user": {
-                    "name": "Afzaal Ameer",
-                    "id": "54A0117ABD2BE3F251C3492A",
-                    "username": "afzaalace",
-                    "title": "Some Title 123",
-                    "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum, lorem vitae pretium cursus, felis ipsum vehicula nibh, vel pretium lectus lorem at nisl.\n In non ligula lorem. Ut vulputate efficitur consequat. Curabitur non efficitur ipsum. Nam eget odio eu ligula congue rutrum.",
+                    "name": "Dan Rogers",
+                    "id": "55195B5A0BD9E6AC218174AC",
+                    "username": "danrogers",
+                    "title": "Co-Founder of Linc",
+                    "bio": "",
                     "location": "Madrid, Madrid, Spain",
-                    "followers_count": 5,
-                    "followings_count": 1,
-                    "leafs_count": 5,
-                    "membersince": "2014-12-28T14:19:38.000Z",
-                    "rev": 5,
-                    "website": "http://www.afzaalace.com",
+                    "followers_count": 7,
+                    "followings_count": 4,
+                    "leafs_count": 50,
+                    "membersince": "2015-03-30T14:19:06.000Z",
+                    "rev": 2,
+                    "website": "",
                     "following_state": false,
-                    "image": "http://cdn-a.linc.net/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+                    "image": "http://cdn-c.linc.net/users/profile-55195B5A0BD9E6AC218174AC.jpg",
                     "_links": {
                         "self": {
-                            "href": "/v1/users/54A0117ABD2BE3F251C3492A"
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC"
                         },
                         "activities": {
-                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/activities"
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/activities"
                         },
                         "followers": {
-                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
                         },
-                        "following": {
-                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/following"
+                        "followings": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/followings"
                         },
                         "leafed": {
-                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/leafed"
+                        },
+                        "messages": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/messages"
                         },
                         "posts": {
-                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
                         }
                     }
                 },
                 "description": "Institutional Shareholder Services today recommended that investors in both companies approve Tesla Motors' plan to buy solar panel installer SolarCity for more than $2 billion.",
-                "created_date": "2017-02-11T19:04:58.000Z",
-                "image": "http://cdn-b.linc.net/posts/589F605A8B46EB781B66F0C9.jpg",
+                "created_date": "2016-11-05T14:34:18.000Z",
+                "image": "http://cdn-d.linc.net/posts/581DEDEA002B74604FE091C1.jpg",
                 "rev": 0,
-                "views_count": 0,
+                "views_count": 41,
                 "leafs_count": 0,
                 "comments_count": 0,
-                "shortURL": "Gf",
-                "timestamp": "2017-02-11T19:04:58.000Z",
+                "shortURL": "BG",
+                "timestamp": "2017-02-12T00:14:42.000Z",
                 "leaf_state": false,
+                "interest_graph": {
+                    "sectors": [
+                        {
+                            "sector": "3",
+                            "share": 86
+                        },
+                        {
+                            "sector": "2",
+                            "share": 18
+                        }
+                    ]
+                },
                 "_links": {
                     "self": {
-                        "href": "/v1/posts/589F605A8B46EB781B66F0C9"
+                        "href": "/v1/posts/581DEDEA002B74604FE091C1"
                     },
                     "comments": {
-                        "href": "/v1/posts/589F605A8B46EB781B66F0C9/comments"
+                        "href": "/v1/posts/581DEDEA002B74604FE091C1/comments"
                     }
                 }
             }
@@ -1177,13 +1536,14 @@ HOST: https://testapi.linc.world/v1
                     "title": "Co-Founder of Linc",
                     "bio": "",
                     "location": "Madrid, Madrid, Spain",
-                    "followers_count": 6,
+                    "followers_count": 7,
                     "followings_count": 4,
-                    "leafs_count": 48,
+                    "leafs_count": 50,
                     "membersince": "2015-03-30T14:19:06.000Z",
                     "rev": 2,
                     "website": "",
-                    "image": "https://cdn.linc.world/users/profile-55195B5A0BD9E6AC218174AC.jpg",
+                    "following_state": false,
+                    "image": "http://cdn-c.linc.net/users/profile-55195B5A0BD9E6AC218174AC.jpg",
                     "_links": {
                         "self": {
                             "href": "/v1/users/55195B5A0BD9E6AC218174AC"
@@ -1194,8 +1554,14 @@ HOST: https://testapi.linc.world/v1
                         "followers": {
                             "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
                         },
-                        "following": {
-                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/following"
+                        "followings": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/followings"
+                        },
+                        "leafed": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/leafed"
+                        },
+                        "messages": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/messages"
                         },
                         "posts": {
                             "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
@@ -1204,28 +1570,23 @@ HOST: https://testapi.linc.world/v1
                 },
                 "description": "Institutional Shareholder Services today recommended that investors in both companies approve Tesla Motors' plan to buy solar panel installer SolarCity for more than $2 billion.",
                 "created_date": "2016-11-05T14:34:18.000Z",
-                "image": "https://cdn.linc.world/articles/581DEDEA002B74604FE091C1.jpg",
+                "image": "http://cdn-d.linc.net/posts/581DEDEA002B74604FE091C1.jpg",
                 "rev": 0,
-                "height": 172,
                 "views_count": 41,
                 "leafs_count": 0,
                 "comments_count": 0,
                 "shortURL": "BG",
-                "timestamp": "2017-01-13T00:58:55.000Z",
+                "timestamp": "2017-02-12T00:14:42.000Z",
                 "leaf_state": false,
-                "interests": {
+                "interest_graph": {
                     "sectors": [
                         {
-                            "sector": "4",
+                            "sector": "3",
                             "share": 86
                         },
                         {
-                            "sector": "64",
-                            "share": 86
-                        },
-                        {
-                            "sector": "63",
-                            "share": 22
+                            "sector": "2",
+                            "share": 18
                         }
                     ]
                 },
@@ -1298,7 +1659,8 @@ HOST: https://testapi.linc.world/v1
                             "username": "pranay",
                             "title": "Founder | Linc",
                             "location": "Madrid, Madrid, Spain",
-                            "image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
+                            "following_state": true,
+                            "image": "http://cdn-c.linc.net/users/profile-54A05594DFE5D181114C762A.jpg",
                             "_links": {
                                 "self": {
                                     "href": "/v1/users/54A05594DFE5D181114C762A"
@@ -1309,8 +1671,14 @@ HOST: https://testapi.linc.world/v1
                                 "followers": {
                                     "href": "/v1/users/54A05594DFE5D181114C762A/followers"
                                 },
-                                "following": {
-                                    "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                                "followings": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/followings"
+                                },
+                                "leafed": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/leafed"
+                                },
+                                "messages": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A/messages"
                                 },
                                 "posts": {
                                     "href": "/v1/users/54A05594DFE5D181114C762A/posts"
@@ -1320,11 +1688,13 @@ HOST: https://testapi.linc.world/v1
                         "comment": "<a class=\"user\" target=\"_blank\" href=\"/danrogers\">Dan Rogers</a>  Could you point to any peer-reviewed publications on the subject of climate by any of these 49 signatories?",
                         "leafs_count": 0,
                         "created_date": "2016-03-11T11:43:58.000Z",
-                        "meta": "",
-                        "flag": 0,
+                        "leaf_state": false,
                         "_links": {
                             "self": {
-                                "href": "/v1/comments/25"
+                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25"
+                            },
+                            "replies": {
+                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25/replies"
                             }
                         }
                     },
@@ -1336,7 +1706,8 @@ HOST: https://testapi.linc.world/v1
                             "username": "danrogers",
                             "title": "Co-Founder of Linc",
                             "location": "Madrid, Madrid, Spain",
-                            "image": "https://cdn.linc.world/users/profile-55195B5A0BD9E6AC218174AC.jpg",
+                            "following_state": false,
+                            "image": "http://cdn-d.linc.net/users/profile-55195B5A0BD9E6AC218174AC.jpg",
                             "_links": {
                                 "self": {
                                     "href": "/v1/users/55195B5A0BD9E6AC218174AC"
@@ -1347,8 +1718,14 @@ HOST: https://testapi.linc.world/v1
                                 "followers": {
                                     "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
                                 },
-                                "following": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/following"
+                                "followings": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/followings"
+                                },
+                                "leafed": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/leafed"
+                                },
+                                "messages": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/messages"
                                 },
                                 "posts": {
                                     "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
@@ -1358,11 +1735,13 @@ HOST: https://testapi.linc.world/v1
                         "comment": "<a class=\"user\" target=\"_blank\" href=\"/pranay\">Pranay Krishen</a>  No.",
                         "leafs_count": 0,
                         "created_date": "2016-03-11T11:45:32.000Z",
-                        "meta": "",
-                        "flag": 0,
+                        "leaf_state": false,
                         "_links": {
                             "self": {
-                                "href": "/v1/comments/26"
+                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/26"
+                            },
+                            "replies": {
+                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/26/replies"
                             }
                         }
                     }
@@ -1400,15 +1779,15 @@ HOST: https://testapi.linc.world/v1
     + Body
 
             {
-                "id": 95,
+                "id": 100,
                 "user": {
                     "name": "Afzaal Ameer",
                     "id": "54A0117ABD2BE3F251C3492A",
                     "username": "afzaalace",
-                    "title": "Evolutionary UX/UI Geek, Entrepreneur, FOSS Contributor",
+                    "title": "Some Title 123",
                     "location": "Madrid, Madrid, Spain",
                     "following_state": false,
-                    "image": "https://cdn.linc.world/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+                    "image": "http://cdn-a.linc.net/users/profile-54A0117ABD2BE3F251C3492A.jpg",
                     "_links": {
                         "self": {
                             "href": "/v1/users/54A0117ABD2BE3F251C3492A"
@@ -1419,11 +1798,14 @@ HOST: https://testapi.linc.world/v1
                         "followers": {
                             "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
                         },
-                        "following": {
-                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/following"
+                        "followings": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/followings"
                         },
                         "leafed": {
                             "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
+                        },
+                        "messages": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/messages"
                         },
                         "posts": {
                             "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
@@ -1436,9 +1818,9 @@ HOST: https://testapi.linc.world/v1
                     "description": "Looks like another GISS miss, more than a few people are getting fed up with Jim Hansen and Gavin Schmidt and their climate shenanigans. Some very prominent NASA voices speak out in a scathing lett…",
                     "created_date": "2016-03-10T16:46:00.000Z",
                     "leafs_count": 1,
-                    "comments_count": 6,
+                    "comments_count": 20,
                     "shortURL": "dW",
-                    "timestamp": "2017-02-08T23:32:19.000Z",
+                    "timestamp": "2017-03-31T08:57:23.000Z",
                     "leaf_state": false,
                     "_links": {
                         "self": {
@@ -1449,15 +1831,16 @@ HOST: https://testapi.linc.world/v1
                         }
                     }
                 },
-                "comment": "#This is a\ncomment\nthat mentions <@54A05594DFE5D181114C762A>, <@54A05594DFE5D181114C762B> and links <http://Example.net/>, <http://example.net/> \n",
+                "comment": "#This is a\ncomment\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
                 "leafs_count": 0,
-                "created_date": "2017-02-08T23:32:19.000Z",
-                "meta": "",
-                "flag": 0,
+                "created_date": "2017-03-31T08:57:23.000Z",
                 "leaf_state": false,
                 "_links": {
                     "self": {
-                        "href": "/v1/comments/95"
+                        "href": "/v1/posts/undefined/comments/100"
+                    },
+                    "replies": {
+                        "href": "/v1/posts/undefined/comments/100/replies"
                     }
                 }
             }
@@ -1489,13 +1872,14 @@ HOST: https://testapi.linc.world/v1
                     "title": "Co-Founder of Linc",
                     "bio": "",
                     "location": "Madrid, Madrid, Spain",
-                    "followers_count": 6,
+                    "followers_count": 7,
                     "followings_count": 4,
-                    "leafs_count": 48,
+                    "leafs_count": 49,
                     "membersince": "2015-03-30T14:19:06.000Z",
                     "rev": 2,
                     "website": "",
-                    "image": "https://cdn.linc.world/users/profile-55195B5A0BD9E6AC218174AC.jpg",
+                    "following_state": false,
+                    "image": "http://cdn-b.linc.net/users/profile-55195B5A0BD9E6AC218174AC.jpg",
                     "_links": {
                         "self": {
                             "href": "/v1/users/55195B5A0BD9E6AC218174AC"
@@ -1506,8 +1890,14 @@ HOST: https://testapi.linc.world/v1
                         "followers": {
                             "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
                         },
-                        "following": {
-                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/following"
+                        "followings": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/followings"
+                        },
+                        "leafed": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/leafed"
+                        },
+                        "messages": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/messages"
                         },
                         "posts": {
                             "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
@@ -1516,15 +1906,26 @@ HOST: https://testapi.linc.world/v1
                 },
                 "description": "Institutional Shareholder Services today recommended that investors in both companies approve Tesla Motors' plan to buy solar panel installer SolarCity for more than $2 billion.",
                 "created_date": "2016-11-05T14:34:18.000Z",
-                "image": "https://cdn.linc.world/articles/581DEDEA002B74604FE091C1.jpg",
+                "image": "http://cdn-c.linc.net/posts/581DEDEA002B74604FE091C1.jpg",
                 "rev": 0,
-                "height": 172,
                 "views_count": 41,
-                "leafs_count": 0,
+                "leafs_count": 1,
                 "comments_count": 0,
                 "shortURL": "BG",
-                "timestamp": "2017-01-13T00:58:55.000Z",
+                "timestamp": "2017-03-31T09:21:19.000Z",
                 "leaf_state": true,
+                "interest_graph": {
+                    "sectors": [
+                        {
+                            "sector": "3",
+                            "share": 86
+                        },
+                        {
+                            "sector": "2",
+                            "share": 29
+                        }
+                    ]
+                },
                 "_links": {
                     "self": {
                         "href": "/v1/posts/581DEDEA002B74604FE091C1"
@@ -1561,13 +1962,14 @@ HOST: https://testapi.linc.world/v1
                     "title": "Co-Founder of Linc",
                     "bio": "",
                     "location": "Madrid, Madrid, Spain",
-                    "followers_count": 6,
+                    "followers_count": 7,
                     "followings_count": 4,
-                    "leafs_count": 48,
+                    "leafs_count": 49,
                     "membersince": "2015-03-30T14:19:06.000Z",
                     "rev": 2,
                     "website": "",
-                    "image": "https://cdn.linc.world/users/profile-55195B5A0BD9E6AC218174AC.jpg",
+                    "following_state": false,
+                    "image": "http://cdn-b.linc.net/users/profile-55195B5A0BD9E6AC218174AC.jpg",
                     "_links": {
                         "self": {
                             "href": "/v1/users/55195B5A0BD9E6AC218174AC"
@@ -1578,8 +1980,14 @@ HOST: https://testapi.linc.world/v1
                         "followers": {
                             "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
                         },
-                        "following": {
-                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/following"
+                        "followings": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/followings"
+                        },
+                        "leafed": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/leafed"
+                        },
+                        "messages": {
+                            "href": "/v1/users/55195B5A0BD9E6AC218174AC/messages"
                         },
                         "posts": {
                             "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
@@ -1588,15 +1996,26 @@ HOST: https://testapi.linc.world/v1
                 },
                 "description": "Institutional Shareholder Services today recommended that investors in both companies approve Tesla Motors' plan to buy solar panel installer SolarCity for more than $2 billion.",
                 "created_date": "2016-11-05T14:34:18.000Z",
-                "image": "https://cdn.linc.world/articles/581DEDEA002B74604FE091C1.jpg",
+                "image": "http://cdn-c.linc.net/posts/581DEDEA002B74604FE091C1.jpg",
                 "rev": 0,
-                "height": 172,
                 "views_count": 41,
-                "leafs_count": 0,
+                "leafs_count": 1,
                 "comments_count": 0,
                 "shortURL": "BG",
-                "timestamp": "2017-01-13T00:58:55.000Z",
+                "timestamp": "2017-03-31T09:21:19.000Z",
                 "leaf_state": false,
+                "interest_graph": {
+                    "sectors": [
+                        {
+                            "sector": "3",
+                            "share": 86
+                        },
+                        {
+                            "sector": "2",
+                            "share": 29
+                        }
+                    ]
+                },
                 "_links": {
                     "self": {
                         "href": "/v1/posts/581DEDEA002B74604FE091C1"
@@ -1609,97 +2028,11 @@ HOST: https://testapi.linc.world/v1
 
 # Group Comments
 
-## Comment [/comments/{id}]
+## Comment [/posts/{post}/comments/{id}]
 ### Get Comment [GET]
 + Parameters
 
-    + id (required, number, `25`)
-
-+ Request
-
-    + Headers
-
-            Authorization: Bearer <access_token>
-
-+ Response 200 (application/json)
-
-    + Body
-
-            {
-                "id": 25,
-                "user": {
-                    "name": "Pranay Krishen",
-                    "id": "54A05594DFE5D181114C762A",
-                    "username": "pranay",
-                    "title": "Founder | Linc",
-                    "location": "Madrid, Madrid, Spain",
-                    "image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
-                    "_links": {
-                        "self": {
-                            "href": "/v1/users/54A05594DFE5D181114C762A"
-                        },
-                        "activities": {
-                            "href": "/v1/users/54A05594DFE5D181114C762A/activities"
-                        },
-                        "followers": {
-                            "href": "/v1/users/54A05594DFE5D181114C762A/followers"
-                        },
-                        "following": {
-                            "href": "/v1/users/54A05594DFE5D181114C762A/following"
-                        },
-                        "posts": {
-                            "href": "/v1/users/54A05594DFE5D181114C762A/posts"
-                        }
-                    }
-                },
-                "post": {
-                    "id": "56E1A4C8C6658CBD561ECF05",
-                    "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
-                    "description": "Looks like another GISS miss, more than a few people are getting fed up with Jim Hansen and Gavin Schmidt and their climate shenanigans. Some very prominent NASA voices speak out in a scathing lett…",
-                    "created_date": "2016-03-10T16:46:00.000Z",
-                    "leafs_count": 1,
-                    "comments_count": 5,
-                    "shortURL": "dW",
-                    "timestamp": "2016-12-22T14:12:26.000Z",
-                    "_links": {
-                        "self": {
-                            "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
-                        },
-                        "comments": {
-                            "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments"
-                        }
-                    }
-                },
-                "comment": "<a class=\"user\" target=\"_blank\" href=\"/danrogers\">Dan Rogers</a>  Could you point to any peer-reviewed publications on the subject of climate by any of these 49 signatories?",
-                "leafs_count": 0,
-                "created_date": "2016-03-11T11:43:58.000Z",
-                "meta": "",
-                "flag": 0,
-                "leaf_state": false,
-                "_links": {
-                    "self": {
-                        "href": "/v1/comments/25"
-                    }
-                }
-            }
-
-### Remove Comment [DELETE]
-+ Parameters
-
-    + id (required, number, `95`)
-
-+ Request
-
-    + Headers
-
-            Authorization: Bearer <access_token>
-
-+ Response 204
-
-### Leaf Comment [/comments/{id}/leaf]
-#### Leaf Comment [POST]
-+ Parameters
-
+    + post (required, hexadecimal, `56E1A4C8C6658CBD561ECF05`)
     + id (required, number, `25`)
 
 + Request
@@ -1721,10 +2054,10 @@ HOST: https://testapi.linc.world/v1
                     "title": "Founder | Linc",
                     "location": "Madrid, Madrid, Spain",
                     "following_state": true,
-                    "image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
+                    "image": "http://cdn-a.linc.net/users/profile-54A05594DFE5D181114C762A.jpg",
                     "_links": {
                         "self": {
-                        "href": "/v1/users/54A05594DFE5D181114C762A"
+                            "href": "/v1/users/54A05594DFE5D181114C762A"
                         },
                         "activities": {
                             "href": "/v1/users/54A05594DFE5D181114C762A/activities"
@@ -1732,11 +2065,14 @@ HOST: https://testapi.linc.world/v1
                         "followers": {
                             "href": "/v1/users/54A05594DFE5D181114C762A/followers"
                         },
-                        "following": {
-                            "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                        "followings": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/followings"
                         },
                         "leafed": {
                             "href": "/v1/users/54A05594DFE5D181114C762A/leafed"
+                        },
+                        "messages": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/messages"
                         },
                         "posts": {
                             "href": "/v1/users/54A05594DFE5D181114C762A/posts"
@@ -1749,9 +2085,9 @@ HOST: https://testapi.linc.world/v1
                     "description": "Looks like another GISS miss, more than a few people are getting fed up with Jim Hansen and Gavin Schmidt and their climate shenanigans. Some very prominent NASA voices speak out in a scathing lett…",
                     "created_date": "2016-03-10T16:46:00.000Z",
                     "leafs_count": 1,
-                    "comments_count": 22,
+                    "comments_count": 20,
                     "shortURL": "dW",
-                    "timestamp": "2017-02-09T00:40:57.000Z",
+                    "timestamp": "2017-03-31T08:57:23.000Z",
                     "leaf_state": false,
                     "_links": {
                         "self": {
@@ -1763,14 +2099,112 @@ HOST: https://testapi.linc.world/v1
                     }
                 },
                 "comment": "<a class=\"user\" target=\"_blank\" href=\"/danrogers\">Dan Rogers</a>  Could you point to any peer-reviewed publications on the subject of climate by any of these 49 signatories?",
-                "leafs_count": 1,
+                "leafs_count": 0,
                 "created_date": "2016-03-11T11:43:58.000Z",
-                "meta": "",
-                "flag": 0,
-                "leaf_state": true,
-                    "_links": {
+                "leaf_state": false,
+                "_links": {
                     "self": {
-                        "href": "/v1/comments/25"
+                        "href": "/v1/posts/undefined/comments/25"
+                    },
+                    "replies": {
+                        "href": "/v1/posts/undefined/comments/25/replies"
+                    }
+                }
+            }
+
+### Remove Comment [DELETE]
++ Parameters
+
+    + id (required, number, `95`)
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 204
+
+### Leaf Comment [/posts/{post}/comments/{id}/leaf]
+#### Leaf Comment [POST]
++ Parameters
+
+    + post (required, hexadecimal, `56E1A4C8C6658CBD561ECF05`)
+    + id (required, number, `25`)
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 25,
+                "user": {
+                    "name": "Pranay Krishen",
+                    "id": "54A05594DFE5D181114C762A",
+                    "username": "pranay",
+                    "title": "Founder | Linc",
+                    "location": "Madrid, Madrid, Spain",
+                    "following_state": true,
+                    "image": "http://cdn-a.linc.net/users/profile-54A05594DFE5D181114C762A.jpg",
+                    "_links": {
+                        "self": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A"
+                        },
+                        "activities": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/activities"
+                        },
+                        "followers": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/followers"
+                        },
+                        "followings": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/followings"
+                        },
+                        "leafed": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/leafed"
+                        },
+                        "messages": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/messages"
+                        },
+                        "posts": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/posts"
+                        }
+                    }
+                },
+                "post": {
+                    "id": "56E1A4C8C6658CBD561ECF05",
+                    "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
+                    "description": "Looks like another GISS miss, more than a few people are getting fed up with Jim Hansen and Gavin Schmidt and their climate shenanigans. Some very prominent NASA voices speak out in a scathing lett…",
+                    "created_date": "2016-03-10T16:46:00.000Z",
+                    "leafs_count": 1,
+                    "comments_count": 20,
+                    "shortURL": "dW",
+                    "timestamp": "2017-03-31T08:57:23.000Z",
+                    "leaf_state": false,
+                    "_links": {
+                        "self": {
+                            "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
+                        },
+                        "comments": {
+                            "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments"
+                        }
+                    }
+                },
+                "comment": "<a class=\"user\" target=\"_blank\" href=\"/danrogers\">Dan Rogers</a>  Could you point to any peer-reviewed publications on the subject of climate by any of these 49 signatories?",
+                "leafs_count": 0,
+                "created_date": "2016-03-11T11:43:58.000Z",
+                "leaf_state": true,
+                "_links": {
+                    "self": {
+                        "href": "/v1/posts/undefined/comments/25"
+                    },
+                    "replies": {
+                        "href": "/v1/posts/undefined/comments/25/replies"
                     }
                 }
             }
@@ -1799,10 +2233,10 @@ HOST: https://testapi.linc.world/v1
                     "title": "Founder | Linc",
                     "location": "Madrid, Madrid, Spain",
                     "following_state": true,
-                    "image": "https://cdn.linc.world/users/profile-54A05594DFE5D181114C762A.jpg",
+                    "image": "http://cdn-a.linc.net/users/profile-54A05594DFE5D181114C762A.jpg",
                     "_links": {
                         "self": {
-                        "href": "/v1/users/54A05594DFE5D181114C762A"
+                            "href": "/v1/users/54A05594DFE5D181114C762A"
                         },
                         "activities": {
                             "href": "/v1/users/54A05594DFE5D181114C762A/activities"
@@ -1810,11 +2244,14 @@ HOST: https://testapi.linc.world/v1
                         "followers": {
                             "href": "/v1/users/54A05594DFE5D181114C762A/followers"
                         },
-                        "following": {
-                            "href": "/v1/users/54A05594DFE5D181114C762A/following"
+                        "followings": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/followings"
                         },
                         "leafed": {
                             "href": "/v1/users/54A05594DFE5D181114C762A/leafed"
+                        },
+                        "messages": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A/messages"
                         },
                         "posts": {
                             "href": "/v1/users/54A05594DFE5D181114C762A/posts"
@@ -1826,10 +2263,10 @@ HOST: https://testapi.linc.world/v1
                     "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
                     "description": "Looks like another GISS miss, more than a few people are getting fed up with Jim Hansen and Gavin Schmidt and their climate shenanigans. Some very prominent NASA voices speak out in a scathing lett…",
                     "created_date": "2016-03-10T16:46:00.000Z",
-                    "leafs_count": 1,
-                    "comments_count": 22,
+                    "leafs_count": 0,
+                    "comments_count": 20,
                     "shortURL": "dW",
-                    "timestamp": "2017-02-09T00:40:57.000Z",
+                    "timestamp": "2017-03-31T08:57:23.000Z",
                     "leaf_state": false,
                     "_links": {
                         "self": {
@@ -1841,14 +2278,15 @@ HOST: https://testapi.linc.world/v1
                     }
                 },
                 "comment": "<a class=\"user\" target=\"_blank\" href=\"/danrogers\">Dan Rogers</a>  Could you point to any peer-reviewed publications on the subject of climate by any of these 49 signatories?",
-                "leafs_count": 1,
+                "leafs_count": 0,
                 "created_date": "2016-03-11T11:43:58.000Z",
-                "meta": "",
-                "flag": 0,
                 "leaf_state": false,
-                    "_links": {
+                "_links": {
                     "self": {
-                        "href": "/v1/comments/25"
+                        "href": "/v1/posts/undefined/comments/25"
+                    },
+                    "replies": {
+                        "href": "/v1/posts/undefined/comments/25/replies"
                     }
                 }
             }
@@ -1876,36 +2314,36 @@ HOST: https://testapi.linc.world/v1
             {
                 "notifications": [
                     {
-                        "id": 12873,
-                        "activity": 3366,
+                        "id": 13071,
+                        "activity": 3385,
                         "user": "54A0117ABD2BE3F251C3492A",
                         "user_name": "Afzaal Ameer",
-                        "owner_id": "54A05594DFE5D181114C762A",
-                        "owner_name": "Pranay Krishen",
-                        "type": "followFollowed",
-                        "post": "",
-                        "title": "",
-                        "other_id": "57C46B27EBEE47694A1ED92C",
-                        "other_name": "Antonio Jiménez Martínez",
-                        "param": "",
-                        "status": -1,
-                        "timestamp": "2017-01-15T15:32:23.000Z"
-                    },
-                    {
-                        "id": 12626,
-                        "activity": 3325,
-                        "user": "54A0117ABD2BE3F251C3492A",
-                        "user_name": "Afzaal Ameer",
-                        "owner_id": "54A05594DFE5D181114C762A",
-                        "owner_name": "Pranay Krishen",
-                        "type": "post",
-                        "post": "5835A14EFE73BC5A3372CF97",
-                        "title": "What's Really Warming the World?",
+                        "owner_id": "54A0117ABD2BE3F251C3492A",
+                        "owner_name": "Afzaal Ameer",
+                        "type": "postComment",
+                        "post": "56E1A4C8C6658CBD561ECF05",
+                        "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
                         "other_id": "",
                         "other_name": "",
                         "param": "",
                         "status": -1,
-                        "timestamp": "2016-11-23T14:01:50.000Z"
+                        "created_date": "2017-03-31T08:57:23.000Z"
+                    },
+                    {
+                        "id": 13061,
+                        "activity": 3384,
+                        "user": "54A0117ABD2BE3F251C3492A",
+                        "user_name": "Afzaal Ameer",
+                        "owner_id": "54A0117ABD2BE3F251C3492A",
+                        "owner_name": "Afzaal Ameer",
+                        "type": "postComment",
+                        "post": "56E1A4C8C6658CBD561ECF05",
+                        "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
+                        "other_id": "",
+                        "other_name": "",
+                        "param": "",
+                        "status": -1,
+                        "created_date": "2017-03-31T08:56:55.000Z"
                     }
                 ],
                 "_links": {
@@ -1951,7 +2389,7 @@ HOST: https://testapi.linc.world/v1
                 "other_name": "Antonio Jiménez Martínez",
                 "param": "",
                 "status": -1,
-                "timestamp": "2017-01-15T15:32:23.000Z"
+                "created_date": "2017-01-15T15:32:23.000Z"
             }
 
 # Group Feed
@@ -1977,7 +2415,67 @@ HOST: https://testapi.linc.world/v1
             {
                 "posts": [
                     {
-                        "image": "https://cdn.linc.world/articles/58515AA20A5E7CB347616F1B.jpg",
+                        "image": "http://cdn-d.linc.net/posts/58593710C0E0421774286DA5.jpg",
+                        "shortURL": "F7",
+                        "comments_count": 0,
+                        "description": "In a somewhat surprising move, President-elect Donald Trump has appointed Tesla’s CEO Elon Musk to his Strategic and Policy Forum",
+                        "source": "http://oilprice.com/Energy/Energy-General/Did-Trump-Just-Make-Peace-With-The-Renewables-Lobby.html",
+                        "created_date": "2016-12-20T13:50:08.000Z",
+                        "views_count": 96,
+                        "title": "Did Trump Just Make Peace With The Renewables Lobby?",
+                        "leafs_count": 1,
+                        "id": "58593710C0E0421774286DA5",
+                        "leaf_state": false,
+                        "user": {
+                            "name": "Dan Rogers",
+                            "id": "55195B5A0BD9E6AC218174AC",
+                            "username": "danrogers",
+                            "title": "Co-Founder of Linc",
+                            "bio": "",
+                            "location": "Madrid, Madrid, Spain",
+                            "followers_count": 7,
+                            "followings_count": 4,
+                            "leafs_count": 49,
+                            "membersince": 1427725146,
+                            "rev": 2,
+                            "website": "",
+                            "following_state": false,
+                            "image": "http://cdn-b.linc.net/users/profile-55195B5A0BD9E6AC218174AC.jpg",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC"
+                                },
+                                "activities": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/activities"
+                                },
+                                "followers": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
+                                },
+                                "followings": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/followings"
+                                },
+                                "leafed": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/leafed"
+                                },
+                                "messages": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/messages"
+                                },
+                                "posts": {
+                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
+                                }
+                            }
+                        },
+                        "_links": {
+                            "self": {
+                                "href": "/v1/posts/58593710C0E0421774286DA5"
+                            },
+                            "comments": {
+                                "href": "/v1/posts/58593710C0E0421774286DA5/comments"
+                            }
+                        }
+                    },
+                    {
+                        "image": "http://cdn-a.linc.net/posts/58515AA20A5E7CB347616F1B.jpg",
                         "shortURL": "F6",
                         "comments_count": 0,
                         "description": "2016 has been a big year for the global energy storage market.",
@@ -1987,6 +2485,7 @@ HOST: https://testapi.linc.world/v1
                         "title": "Businesses and homes across the world adopt battery storage",
                         "leafs_count": 0,
                         "id": "58515AA20A5E7CB347616F1B",
+                        "leaf_state": false,
                         "user": {
                             "name": "Neil Maycock",
                             "id": "585159A80A5E7CB347616F1A",
@@ -1996,11 +2495,12 @@ HOST: https://testapi.linc.world/v1
                             "location": "",
                             "followers_count": 0,
                             "followings_count": 0,
-                            "leafs_count": 0,
+                            "leafs_count": 1,
                             "membersince": 1481726376,
                             "rev": 0,
                             "website": "",
-                            "image": "https://cdn.linc.world/users/profile-585159A80A5E7CB347616F1A.jpg",
+                            "following_state": false,
+                            "image": "http://cdn-c.linc.net/users/profile-585159A80A5E7CB347616F1A.jpg",
                             "_links": {
                                 "self": {
                                     "href": "/v1/users/585159A80A5E7CB347616F1A"
@@ -2011,11 +2511,14 @@ HOST: https://testapi.linc.world/v1
                                 "followers": {
                                     "href": "/v1/users/585159A80A5E7CB347616F1A/followers"
                                 },
-                                "following": {
-                                    "href": "/v1/users/585159A80A5E7CB347616F1A/following"
+                                "followings": {
+                                    "href": "/v1/users/585159A80A5E7CB347616F1A/followings"
                                 },
                                 "leafed": {
                                     "href": "/v1/users/585159A80A5E7CB347616F1A/leafed"
+                                },
+                                "messages": {
+                                    "href": "/v1/users/585159A80A5E7CB347616F1A/messages"
                                 },
                                 "posts": {
                                     "href": "/v1/users/585159A80A5E7CB347616F1A/posts"
@@ -2030,61 +2533,6 @@ HOST: https://testapi.linc.world/v1
                                 "href": "/v1/posts/58515AA20A5E7CB347616F1B/comments"
                             }
                         }
-                    },
-                    {
-                        "image": "https://cdn.linc.world/articles/58386A97068EB55C12E4C25F.jpg",
-                        "shortURL": "F3",
-                        "comments_count": 0,
-                        "description": "Finland plans to stop using coal in the 2020s, aiming for carbon neutrality as soon as 2050.",
-                        "source": "http://inhabitat.com/finland-may-be-the-first-country-to-completely-ban-coal/",
-                        "created_date": "2016-11-25T16:45:11.000Z",
-                        "views_count": 151,
-                        "title": "Finland may be the first country to completely ban coal",
-                        "leafs_count": 0,
-                        "id": "58386A97068EB55C12E4C25F",
-                        "user": {
-                            "name": "Dan Rogers",
-                            "id": "55195B5A0BD9E6AC218174AC",
-                            "username": "danrogers",
-                            "title": "Co-Founder of Linc",
-                            "bio": "",
-                            "location": "Madrid, Madrid, Spain",
-                            "followers_count": 6,
-                            "followings_count": 4,
-                            "leafs_count": 48,
-                            "membersince": 1427725146,
-                            "rev": 2,
-                            "website": "",
-                            "image": "https://cdn.linc.world/users/profile-55195B5A0BD9E6AC218174AC.jpg",
-                            "_links": {
-                                "self": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC"
-                                },
-                                "activities": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/activities"
-                                },
-                                "followers": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
-                                },
-                                "following": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/following"
-                                },
-                                "leafed": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/leafed"
-                                },
-                                "posts": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
-                                }
-                            }
-                        },
-                        "_links": {
-                            "self": {
-                                "href": "/v1/posts/58386A97068EB55C12E4C25F"
-                            },
-                            "comments": {
-                                "href": "/v1/posts/58386A97068EB55C12E4C25F/comments"
-                            }
-                        }
                     }
                 ],
                 "_links": {
@@ -2095,7 +2543,7 @@ HOST: https://testapi.linc.world/v1
                         "href": "/v1/feed/?page=2"
                     },
                     "last": {
-                        "href": "/v1/feed/?page=114"
+                        "href": "/v1/feed/?page=121"
                     }
                 }
             }
@@ -2284,7 +2732,7 @@ HOST: https://testapi.linc.world/v1
             }
 
 ## Search by URL [/search{?post_url}]
-### Search by URL [GET]
+### Search by URL - new article [GET]
 
 + Parameters
 
@@ -2353,6 +2801,45 @@ HOST: https://testapi.linc.world/v1
                         "twitter:title": "A crowd-sourced, revolving solar fund wins DOE backing",
                         "twitter:description": "Government support for innovative solar solutions isn't dead. Yet. ",
                         "twitter:image": "http://media.treehugger.com/assets/images/2017/03/RE-volv-solar.png.400x300_q90_crop-smart.png"
+                    }
+                }
+            }
+### Search by URL - existing article [GET]
+
++ Parameters
+
+    + post_url (required, URL, `http://www.autonews.com/article/20161104/OEM05/161109912/teslas-solarcity-deal-gets-a-boost-from-shareholder-advisory-firm`) - URL for search
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "results": [
+                    {
+                        "id": "581DEDEA002B74604FE091C1",
+                        "source": "http://www.autonews.com/article/20161104/OEM05/161109912/teslas-solarcity-deal-gets-a-boost-from-shareholder-advisory-firm",
+                        "title": "Tesla's SolarCity deal gets a boost from shareholder advisory firm",
+                        "image": "http://cdn-b.linc.net/posts/581DEDEA002B74604FE091C1.jpg",
+                        "_links": {
+                            "self": {
+                                "href": "/v1/posts/581DEDEA002B74604FE091C1"
+                            },
+                            "comments": {
+                                "href": "/v1/posts/581DEDEA002B74604FE091C1/comments"
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "/v1/search/?url=http%3A%2F%2Fwww.autonews.com%2Farticle%2F20161104%2FOEM05%2F161109912%2Fteslas-solarcity-deal-gets-a-boost-from-shareholder-advisory-firm"
                     }
                 }
             }
@@ -2477,7 +2964,7 @@ HOST: https://testapi.linc.world/v1
 
 # Group Tags
 
-## Tags [/tags]
+## Tags [/tags?{lang}]
 ### Get Tags [GET]
 
 + Response 200 (application/json)
