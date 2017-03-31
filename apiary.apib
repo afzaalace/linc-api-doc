@@ -1837,10 +1837,10 @@ This works the same as /users/[your-own-id]
                 "leaf_state": false,
                 "_links": {
                     "self": {
-                        "href": "/v1/posts/undefined/comments/100"
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/100"
                     },
                     "replies": {
-                        "href": "/v1/posts/undefined/comments/100/replies"
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/100/replies"
                     }
                 }
             }
@@ -2104,10 +2104,10 @@ This works the same as /users/[your-own-id]
                 "leaf_state": false,
                 "_links": {
                     "self": {
-                        "href": "/v1/posts/undefined/comments/25"
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25"
                     },
                     "replies": {
-                        "href": "/v1/posts/undefined/comments/25/replies"
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25/replies"
                     }
                 }
             }
@@ -2125,7 +2125,151 @@ This works the same as /users/[your-own-id]
 
 + Response 204
 
-### Leaf Comment [/posts/{post}/comments/{id}/leaf]
+## Replies [/posts/{post}/comments/{id}/replies]
+### Get Replies [GET]
++ Parameters
+
+    + post (required, hexadecimal, `56E1A4C8C6658CBD561ECF05`)
+    + id (required, number, `25`)
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "comments": [
+                    {
+                        "id": 85,
+                        "user": {
+                            "name": "Afzaal Ameer",
+                            "id": "54A0117ABD2BE3F251C3492A",
+                            "username": "afzaalace",
+                            "title": "Some Title 123",
+                            "location": "Madrid, Madrid, Spain",
+                            "following_state": false,
+                            "image": "http://cdn-c.linc.net/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A"
+                                },
+                                "activities": {
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/activities"
+                                },
+                                "followers": {
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
+                                },
+                                "followings": {
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/followings"
+                                },
+                                "leafed": {
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
+                                },
+                                "messages": {
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/messages"
+                                },
+                                "posts": {
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
+                                }
+                            }
+                        },
+                        "comment": "<@54A05594DFE5D181114C762B> #This is a\nreply\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
+                        "leafs_count": 1,
+                        "created_date": "2017-03-29T11:40:18.000Z",
+                        "leaf_state": false,
+                        "_links": {
+                            "self": {
+                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/85"
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25/replies"
+                    },
+                    "comment": {
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25"
+                    },
+                    "post": {
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
+                    }
+                }
+            }
+
+### Add Reply [POST]
++ Parameters
+
+    + id (required, hexadecimal, `56E1A4C8C6658CBD561ECF05`)
+    + id (required, number, `25`)
+
++ Request (application/json)
+
+    + Headers
+
+            Authorization: Bearer <access_token>
+
+    + Body
+
+            {
+                "comment": "<@54A05594DFE5D181114C762B> #This is a\nreply\nthat has links <https://linc.world/p/N>, <http://example.net/> \n"
+            }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id": 85,
+                "user": {
+                    "name": "Afzaal Ameer",
+                    "id": "54A0117ABD2BE3F251C3492A",
+                    "username": "afzaalace",
+                    "title": "Some Title 123",
+                    "location": "Madrid, Madrid, Spain",
+                    "following_state": false,
+                    "image": "http://cdn-c.linc.net/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+                    "_links": {
+                        "self": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A"
+                        },
+                        "activities": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/activities"
+                        },
+                        "followers": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
+                        },
+                        "followings": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/followings"
+                        },
+                        "leafed": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
+                        },
+                        "messages": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/messages"
+                        },
+                        "posts": {
+                            "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
+                        }
+                    }
+                },
+                "comment": "<@54A05594DFE5D181114C762B> #This is a\nreply\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
+                "leafs_count": 1,
+                "created_date": "2017-03-29T11:40:18.000Z",
+                "leaf_state": false,
+                "_links": {
+                    "self": {
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/85"
+                    }
+                }
+            }
+
+### Leaf Comment/Reply [/posts/{post}/comments/{id}/leaf]
 #### Leaf Comment [POST]
 + Parameters
 
@@ -2201,10 +2345,10 @@ This works the same as /users/[your-own-id]
                 "leaf_state": true,
                 "_links": {
                     "self": {
-                        "href": "/v1/posts/undefined/comments/25"
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25"
                     },
                     "replies": {
-                        "href": "/v1/posts/undefined/comments/25/replies"
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25/replies"
                     }
                 }
             }
@@ -2283,10 +2427,10 @@ This works the same as /users/[your-own-id]
                 "leaf_state": false,
                 "_links": {
                     "self": {
-                        "href": "/v1/posts/undefined/comments/25"
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25"
                     },
                     "replies": {
-                        "href": "/v1/posts/undefined/comments/25/replies"
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25/replies"
                     }
                 }
             }
