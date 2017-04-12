@@ -106,7 +106,8 @@ HOST: https://testapi.linc.world/v1
 
     + Form Data
 
-            + name: <user_name>
+            + first_name: <user_name>
+            + last_name: <user_name>
             + email: <user_email>
             + password: <user_password>
             + username: <user_username>
@@ -117,7 +118,7 @@ HOST: https://testapi.linc.world/v1
 
     + Body
 
-            name=User%20Name&email=name%40email.com&password=password&username=username
+            first_name=User%20Name&last_name=User%20Name&email=name%40email.com&password=password&username=username
 
 + Response 200 (application/json)
 
@@ -148,6 +149,8 @@ This works the same as /users/[your-own-id]
             {
                 "id": "54A0117ABD2BE3F251C3492A",
                 "name": "Afzaal Ameer",
+                "first_name": "Afzaal",
+                "last_name": "Ameer",
                 "username": "afzaalace",
                 "email": "afzaal@afzaalace.com",
                 "title": "Some Title 123",
