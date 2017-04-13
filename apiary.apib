@@ -2538,6 +2538,19 @@ This works the same as /users/[your-own-id]
                 "status": -1,
                 "created_date": "2017-01-15T15:32:23.000Z"
             }
+### Mark Notification as read [PATCH]
++ Parameters
+
+    + id (required, number, `25`)
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 204
+
 
 # Group Feed
 
@@ -3097,6 +3110,21 @@ This works the same as /users/[your-own-id]
             }
 
 ### Remove Message [DELETE]
+Deleted message would still remain accessible by the other user.
++ Parameters
+
+    + id (required, number, `13`)
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 204
+
+### Mark Message as read [PATCH]
+Would mark all previous messages of the thread as read.
 + Parameters
 
     + id (required, number, `13`)
