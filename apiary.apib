@@ -3164,3 +3164,85 @@ Would mark all previous messages of the thread as read.
                 "119": "Home",
                 "120": "Photography"
             }
+
+
+# Group Network Activity
+
+## Network Activity [/network]
+### Get Activity [GET]
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "activities": [
+                    {
+                        "id": 13216,
+                        "activity": 3402,
+                        "type": "followComment",
+                        "post": {
+                            "id": "56E1A4C8C6658CBD561ECF05",
+                            "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
+                                }
+                            }
+                        },
+                        "created_date": "2017-04-14T12:47:49.000Z",
+                        "user": {
+                            "id": "54A05594DFE5D181114C762A",
+                            "name": "Pranay Krishen",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A"
+                                }
+                            }
+                        },
+                        "comment": {
+                            "id": "116",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/116"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "id": 12873,
+                        "activity": 3366,
+                        "type": "followFollowed",
+                        "created_date": "2017-01-15T15:32:23.000Z",
+                        "user": {
+                            "id": "54A05594DFE5D181114C762A",
+                            "name": "Pranay Krishen",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A"
+                                }
+                            }
+                        },
+                        "target": {
+                            "id": "57C46B27EBEE47694A1ED92C",
+                            "name": "Antonio Jiménez Martínez",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/57C46B27EBEE47694A1ED92C"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "/v1/activities"
+                    },
+                    "next": {
+                        "href": "/v1/activities?page=2"
+                    },
+                    "last": {
+                        "href": "/v1/activities?page=21"
+                    }
+                }
+            }
