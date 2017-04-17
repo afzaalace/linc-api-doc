@@ -1103,37 +1103,73 @@ This works the same as /users/[your-own-id]
             {
                 "activities": [
                     {
-                        "id": 3366,
-                        "owner_id": "54A05594DFE5D181114C762A",
-                        "owner_name": "Pranay Krishen",
-                        "user_id": "57C46B27EBEE47694A1ED92C",
-                        "user_name": "Antonio Jiménez Martínez",
+                        "id": 3669,
                         "type": "follow",
-                        "post_id": "",
-                        "title": "",
-                        "created_date": "2017-01-15T15:32:23.000Z"
+                        "created_date": "2017-04-11T22:54:35.000Z",
+                        "user": {
+                            "id": "54A05594DFE5D181114C762A",
+                            "name": "Pranay Krishen",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A"
+                                }
+                            }
+                        },
+                        "target": {
+                            "id": "57ED51E6E4F5718E17FD3033",
+                            "name": "Benjamin Earl Evans",
+                            "_links": {
+                                "self": {
+                                "href": "/v1/users/57ED51E6E4F5718E17FD3033"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "id": 3668,
+                        "type": "leaf",
+                        "post": {
+                            "id": "5787CE2D0255887741FAAE63",
+                            "title": "What’s sucking all your electricity? A new device will tell you exactly which appliance it is",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/posts/5787CE2D0255887741FAAE63"
+                                }
+                            }
+                        },
+                        "created_date": "2017-04-11T10:16:47.000Z",
+                        "user": {
+                            "id": "54A05594DFE5D181114C762A",
+                            "name": "Pranay Krishen",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A"
+                                }
+                            }
+                        }
                     },
                     {
                         "id": 3325,
-                        "owner_id": "54A05594DFE5D181114C762A",
-                        "owner_name": "Pranay Krishen",
-                        "user_id": "54A05594DFE5D181114C762A",
-                        "user_name": "Pranay Krishen",
                         "type": "post",
-                        "post_id": "5835A14EFE73BC5A3372CF97",
-                        "title": "What's Really Warming the World?",
-                        "created_date": "2016-11-23T14:01:50.000Z"
-                    },
-                    {
-                        "id": 3257,
-                        "owner_id": "54A05594DFE5D181114C762A",
-                        "owner_name": "Pranay Krishen",
-                        "user_id": "55195B5A0BD9E6AC218174AC",
-                        "user_name": "Dan Rogers",
-                        "type": "leaf",
-                        "post_id": "582C59ED4A46D6D7064643C8",
-                        "title": "Solo across the Atlantic in a Folkboat – Yachting World",
-                        "created_date": "2016-11-17T10:14:46.000Z"
+                        "post": {
+                            "id": "5835A14EFE73BC5A3372CF97",
+                            "title": "What's Really Warming the World?",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/posts/5835A14EFE73BC5A3372CF97"
+                                }
+                            }
+                        },
+                        "created_date": "2016-11-23T14:01:50.000Z",
+                        "user": {
+                            "id": "54A05594DFE5D181114C762A",
+                            "name": "Pranay Krishen",
+                            "_links": {
+                                "self": {
+                                "href": "/v1/users/54A05594DFE5D181114C762A"
+                                }
+                            }
+                        }
                     }
                 ],
                 "_links": {
@@ -2029,6 +2065,68 @@ This works the same as /users/[your-own-id]
                 }
             }
 
+
+## Get Leafers [/posts/{id}/leafers]
+### Gets Leafers [GET]
++ Parameters
+
+    + id (required, hexadecimal, `581DEDEA002B74604FE091C1`)
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "users": [
+                    {
+                        "name": "Afzaal Ameer",
+                        "id": "54A0117ABD2BE3F251C3492A",
+                        "username": "afzaalace",
+                        "title": "Some Title 123",
+                        "location": "Madrid, Madrid, Spain",
+                        "following_state": false,
+                        "image": "http://cdn-a.linc.net/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+                        "_links": {
+                            "self": {
+                                "href": "/v1/users/54A0117ABD2BE3F251C3492A"
+                            },
+                            "activities": {
+                                "href": "/v1/users/54A0117ABD2BE3F251C3492A/activities"
+                            },
+                            "followers": {
+                                "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
+                            },
+                            "followings": {
+                                "href": "/v1/users/54A0117ABD2BE3F251C3492A/followings"
+                            },
+                            "leafed": {
+                                "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
+                            },
+                            "messages": {
+                                "href": "/v1/users/54A0117ABD2BE3F251C3492A/messages"
+                            },
+                            "posts": {
+                                "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "/v1/posts/581DEDEA002B74604FE091C1/leafers"
+                    },
+                    "post": {
+                        "href": "/v1/posts/581DEDEA002B74604FE091C1"
+                    }
+                }
+            }
+
 # Group Comments
 
 ## Comment [/posts/{post}/comments/{id}]
@@ -2127,6 +2225,7 @@ This works the same as /users/[your-own-id]
             Authorization: Bearer <access_token>
 
 + Response 204
+
 
 ## Replies [/posts/{post}/comments/{id}/replies]
 ### Get Replies [GET]
@@ -2438,7 +2537,72 @@ This works the same as /users/[your-own-id]
                 }
             }
 
-# Group Notifications - Needs more work
+## Comment Leafers [/posts/{post}/comments/{id}/leafers]
+### Get Leafers [GET]
++ Parameters
+
+    + post (required, hexadecimal, `56E1A4C8C6658CBD561ECF05`)
+    + id (required, number, `25`)
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer <access_token>
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "users": [
+                {
+                "name": "Afzaal Ameer",
+                "id": "54A0117ABD2BE3F251C3492A",
+                "username": "afzaalace",
+                "title": "Some Title 123",
+                "location": "Madrid, Madrid, Spain",
+                "following_state": false,
+                "image": "http://cdn-a.linc.net/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+                "_links": {
+                "self": {
+                "href": "/v1/users/54A0117ABD2BE3F251C3492A"
+                },
+                "activities": {
+                "href": "/v1/users/54A0117ABD2BE3F251C3492A/activities"
+                },
+                "followers": {
+                "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
+                },
+                "followings": {
+                "href": "/v1/users/54A0117ABD2BE3F251C3492A/followings"
+                },
+                "leafed": {
+                "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
+                },
+                "messages": {
+                "href": "/v1/users/54A0117ABD2BE3F251C3492A/messages"
+                },
+                "posts": {
+                "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
+                }
+                }
+                }
+                ],
+                "_links": {
+                "self": {
+                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25/leafers"
+                },
+                "comment": {
+                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25"
+                },
+                "post": {
+                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
+                }
+                }
+            }
+
+# Group Notifications
 
 ## User Notifications [/notifications{?page,size}]
 ### Get Notifications [GET]
@@ -2461,37 +2625,132 @@ This works the same as /users/[your-own-id]
             {
                 "notifications": [
                     {
-                        "id": 13071,
-                        "activity": 3385,
-                        "user": "54A0117ABD2BE3F251C3492A",
-                        "user_name": "Afzaal Ameer",
-                        "owner_id": "54A0117ABD2BE3F251C3492A",
-                        "owner_name": "Afzaal Ameer",
-                        "type": "postComment",
-                        "post": "56E1A4C8C6658CBD561ECF05",
-                        "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
-                        "other_id": "",
-                        "other_name": "",
-                        "param": "",
-                        "status": -1,
-                        "created_date": "2017-03-31T08:57:23.000Z"
+                        "id": 13569,
+                        "activity": 3621,
+                        "type": "userFollowed",
+                        "status": 1,
+                        "created_date": "2017-04-01T14:28:07.000Z",
+                        "user": {
+                            "id": "58DCCB8496FBBB0C103CCCEE",
+                            "name": "Sergio Cerrutti",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/58DCCB8496FBBB0C103CCCEE"
+                                }
+                            }
+                        },
+                        "_links": {
+                            "self": {
+                                "href": "/v1/notifications/13569"
+                            }
+                        }
                     },
                     {
-                        "id": 13061,
-                        "activity": 3384,
-                        "user": "54A0117ABD2BE3F251C3492A",
-                        "user_name": "Afzaal Ameer",
-                        "owner_id": "54A0117ABD2BE3F251C3492A",
-                        "owner_name": "Afzaal Ameer",
-                        "type": "postComment",
-                        "post": "56E1A4C8C6658CBD561ECF05",
-                        "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
-                        "other_id": "",
-                        "other_name": "",
-                        "param": "",
-                        "status": -1,
-                        "created_date": "2017-03-31T08:56:55.000Z"
-                    }
+                        "id": 12626,
+                        "activity": 3325,
+                        "type": "post",
+                        "post": {
+                            "id": "5835A14EFE73BC5A3372CF97",
+                            "title": "What's Really Warming the World?",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/posts/5835A14EFE73BC5A3372CF97"
+                                }
+                            }
+                        },
+                        "status": 1,
+                        "created_date": "2016-11-23T14:01:50.000Z",
+                        "user": {
+                            "id": "54A05594DFE5D181114C762A",
+                            "name": "Pranay Krishen",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A"
+                                }
+                            }
+                        },
+                        "_links": {
+                            "self": {
+                                "href": "/v1/notifications/12626"
+                            }
+                        }
+                    },
+                    {
+                        "id": 13356,
+                        "activity": 3406,
+                        "type": "commentMention",
+                        "post": {
+                            "id": "56E1A4C8C6658CBD561ECF05",
+                            "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
+                                }
+                            }
+                        },
+                        "status": 0,
+                        "created_date": "2017-04-17T09:57:56.000Z",
+                        "user": {
+                            "id": "54A05594DFE5D181114C762A",
+                            "name": "Pranay Krishen",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A"
+                                }
+                            }
+                        },
+                        "comment": {
+                            "id": "120",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/120"
+                                }
+                            }
+                        },
+                        "_links": {
+                            "self": {
+                                "href": "/v1/notifications/13356"
+                            }
+                        }
+                    },
+                    {
+                        "id": 13355,
+                        "activity": 3406,
+                        "type": "commentReply",
+                        "post": {
+                            "id": "56E1A4C8C6658CBD561ECF05",
+                            "title": "Hansen and Schmidt of NASA GISS under fire for climate stance: Engineers, scientists, astronauts ask",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
+                                }
+                            }
+                        },
+                        "status": 0,
+                        "created_date": "2017-04-17T09:57:56.000Z",
+                        "user": {
+                            "id": "54A05594DFE5D181114C762A",
+                            "name": "Pranay Krishen",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/users/54A05594DFE5D181114C762A"
+                                }
+                            }
+                        },
+                        "comment": {
+                            "id": "120",
+                            "_links": {
+                                "self": {
+                                    "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/120"
+                                }
+                            }
+                        },
+                        "_links": {
+                            "self": {
+                                "href": "/v1/notifications/13355"
+                            }
+                        }
+                    },
                 ],
                 "_links": {
                     "self": {
@@ -2510,7 +2769,7 @@ This works the same as /users/[your-own-id]
 ### Get Notification [GET]
 + Parameters
 
-    + id (required, number, `25`)
+    + id (required, number, `12626`)
 
 + Request
 
@@ -2523,21 +2782,36 @@ This works the same as /users/[your-own-id]
     + Body
 
             {
-                "id": 12873,
-                "activity": 3366,
-                "user": "54A0117ABD2BE3F251C3492A",
-                "user_name": "Afzaal Ameer",
-                "owner_id": "54A05594DFE5D181114C762A",
-                "owner_name": "Pranay Krishen",
-                "type": "followFollowed",
-                "post": "",
-                "title": "",
-                "other_id": "57C46B27EBEE47694A1ED92C",
-                "other_name": "Antonio Jiménez Martínez",
-                "param": "",
-                "status": -1,
-                "created_date": "2017-01-15T15:32:23.000Z"
+                "id": 12626,
+                "activity": 3325,
+                "type": "post",
+                "post": {
+                    "id": "5835A14EFE73BC5A3372CF97",
+                    "title": "What's Really Warming the World?",
+                    "_links": {
+                        "self": {
+                            "href": "/v1/posts/5835A14EFE73BC5A3372CF97"
+                        }
+                    }
+                },
+                "status": 1,
+                "created_date": "2016-11-23T14:01:50.000Z",
+                "user": {
+                    "id": "54A05594DFE5D181114C762A",
+                    "name": "Pranay Krishen",
+                    "_links": {
+                        "self": {
+                            "href": "/v1/users/54A05594DFE5D181114C762A"
+                        }
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "/v1/notifications/12626"
+                    }
+                }
             }
+
 ### Mark Notification as read [PATCH]
 + Parameters
 
