@@ -2805,7 +2805,14 @@ AAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/<span class="hljs-number">2<
   "<span class="hljs-attribute">118</span>": <span class="hljs-value"><span class="hljs-string">"Agriculture"</span></span>,
   "<span class="hljs-attribute">119</span>": <span class="hljs-value"><span class="hljs-string">"Home"</span></span>,
   "<span class="hljs-attribute">120</span>": <span class="hljs-value"><span class="hljs-string">"Photography"</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div><div class="middle"><div id="tags-tags-get" class="action get"><h4 class="action-heading"><div class="name">Get Tags</div><a href="#tags-tags-get" class="method get">GET</a><code class="uri">/tags?</code></h4></div></div><hr class="split"><div class="middle"><section id="network-activity" class="resource-group"><h2 class="group-heading">Network Activity <a href="#network-activity" class="permalink">&para;</a></h2></section></div><div class="middle"><div id="network-activity-network-activity" class="resource"><h3 class="resource-heading">Network Activity <a href="#network-activity-network-activity" class="permalink">&para;</a></h3></div></div><div class="right"><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://testapi.linc.world/v1</span>/network</span></div><div class="tabs"><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></div></div><div class="middle"><div id="tags-tags-get" class="action get"><h4 class="action-heading"><div class="name">Get Tags</div><a href="#tags-tags-get" class="method get">GET</a><code class="uri">/tags?</code></h4></div></div><hr class="split"><div class="middle"><section id="network-activity" class="resource-group"><h2 class="group-heading">Network Activity <a href="#network-activity" class="permalink">&para;</a></h2></section></div><div class="middle"><div id="network-activity-network-activity" class="resource"><h3 class="resource-heading">Network Activity <a href="#network-activity-network-activity" class="permalink">&para;</a></h3><ul>
+<li>Types
+<ul>
+<li>Same as <a href="#notifications-user-notifications">Notifications</a></li>
+</ul>
+</li>
+</ul>
+</div></div><div class="right"><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname">https://testapi.linc.world/v1</span>/network</span></div><div class="tabs"><div class="tabs"><div class="example-names"><span>Responses</span><span class="tab-button">200</span></div><div class="tab"><div><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
     "<span class="hljs-attribute">activities</span>": <span class="hljs-value">[
         {
             "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">13399</span></span>,
@@ -3165,7 +3172,6 @@ function init() {
         toggleCollapseNav({target: navItems[i].children[0]});
     }
 }
-
 
 // Initial call to set up buttons
 init();
