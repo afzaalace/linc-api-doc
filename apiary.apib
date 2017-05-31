@@ -34,6 +34,24 @@ HOST: https://testapi.linc.world/v1
                 "refresh_token": "ieosthc9h1dksne0d0l7llqaig47sl9anaml73103q1ipoj40i512k10o"
             }
 
+### Revoke Token/Logout [DELETE]
+
++ Request (application/x-www-form-urlencoded)
+
+    + Form Data
+
+            + access_token: <access_token>
+
+    + Headers
+
+            Authorization: Basic <clientID>:<clientSecret>
+
+    + Body
+
+            access_token=<access_token>
+
++ Response 205
+
 
 ## Social Auth [/auth/social]
 ### Login [POST]
@@ -94,7 +112,30 @@ HOST: https://testapi.linc.world/v1
                 "refresh_token": "ieosthc9h1dksne0d0l7llqaig47sl9anaml73103q1ipoj40i512k10o"
             }
 
+## Account Deactivation [/auth/deactivate]
+### Deactivate [POST]
 
++ Request (application/x-www-form-urlencoded)
+
+    + Form Data
+
+            + access_token: <access_token>
+
+    + Headers
+
+            Authorization: Basic <clientID>:<clientSecret>
+
+    + Body
+
+            access_token=<access_token>
+
++ Response 202 (application/json)
+
+    + Body
+
+            {
+                "email": "afzaal@afzaalace.com"
+            }
 
 # Group Users
 
@@ -157,10 +198,10 @@ This works the same as /users/[your-own-id]
                 "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fermentum, lorem vitae pretium cursus, felis ipsum vehicula nibh, vel pretium lectus lorem at nisl.\n In non ligula lorem. Ut vulputate efficitur consequat. Curabitur non efficitur ipsum. Nam eget odio eu ligula congue rutrum.",
                 "location": "Madrid, Madrid, Spain",
                 "followers_count": 5,
-                "followings_count": 1,
-                "leafs_count": 5,
+                "followings_count": 2,
+                "leafs_count": 22,
                 "membersince": "2014-12-28T14:19:38.000Z",
-                "rev": 5,
+                "rev": 10,
                 "website": "http://www.afzaalace.com",
                 "facebook": "https://www.facebook.com/afzaalace",
                 "google": "https://plus.google.com/+AfzaalAmeer",
@@ -168,12 +209,18 @@ This works the same as /users/[your-own-id]
                 "linkedin": "http://in.linkedin.com/in/afzaalace",
                 "pinterest": "",
                 "views_count": 164,
-                "posted_count": 2,
+                "posted_count": 9,
                 "interests": {
-                    "sectors": "2,24,63,73,87"
+                    "sectors": "2,24,63"
+                },
+                "digest": "none",
+                "languages": {
+                    "system": "en",
+                    "content": "es"
                 },
                 "following_state": false,
-                "leafed_count": 16,
+                "leafed_count": 19,
+                "activity_count": 55,
                 "interest_graph": {
                     "sectors": [
                         {
@@ -181,20 +228,20 @@ This works the same as /users/[your-own-id]
                             "percentage": 86
                         },
                         {
-                            "sector": "85",
-                            "percentage": 50
+                            "sector": "24",
+                            "percentage": 47
                         },
                         {
                             "sector": "3",
-                            "percentage": 48
+                            "percentage": 37
                         },
                         {
-                            "sector": "5",
-                            "percentage": 45
+                            "sector": "63",
+                            "percentage": 33
                         },
                         {
-                            "sector": "18",
-                            "percentage": 42
+                            "sector": "85",
+                            "percentage": 23
                         }
                     ]
                 },
@@ -277,6 +324,11 @@ This works the same as /users/[your-own-id]
                 "interests": {
                     "sectors": "2,24,63,73,87,88,94,99,113"
                 },
+                "digest": "none",
+                "languages": {
+                    "system": "en",
+                    "content": "es"
+                },
                 "following_state": false,
                 "leafed_count": 16,
                 "interest_graph": {
@@ -358,7 +410,8 @@ This works the same as /users/[your-own-id]
     + Body
 
             {
-                "image": "https://cdn.linc.world/users/profile-54A0117ABD2BE3F251C3492A.jpg"
+                "image": "https://cdn.linc.world/users/profile-54A0117ABD2BE3F251C3492A.jpg",
+                "rev": 10
             }
 
 ## User [/users/{id}]
@@ -1697,7 +1750,7 @@ This works the same as /users/[your-own-id]
 + Parameters
 
     + id (required, hexadecimal, `56E1A4C8C6658CBD561ECF05`)
-    + page (optional, number) - Page number for pagination, default: 1
+    + page (optional, number) - Page number for pagination, default: redirects to last page
     + size (optional, number) - Items per page, default: 20
 
 + Request
@@ -1713,103 +1766,118 @@ This works the same as /users/[your-own-id]
             {
                 "comments": [
                     {
-                        "id": 25,
+                        "id": 122,
                         "user": {
-                            "name": "Pranay Krishen",
-                            "id": "54A05594DFE5D181114C762A",
-                            "username": "pranay",
-                            "title": "Founder | Linc",
+                            "name": "Afzaal Ameer",
+                            "id": "54A0117ABD2BE3F251C3492A",
+                            "username": "afzaalace",
+                            "title": "Some Title 123",
                             "location": "Madrid, Madrid, Spain",
-                            "following_state": true,
-                            "image": "http://cdn-c.linc.net/users/profile-54A05594DFE5D181114C762A.jpg",
+                            "rev": 10,
+                            "following_state": false,
+                            "image": "http://cdn-d.linc.net/users/profile-54A0117ABD2BE3F251C3492A.jpg",
                             "_links": {
                                 "self": {
-                                    "href": "/v1/users/54A05594DFE5D181114C762A"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A"
                                 },
                                 "activities": {
-                                    "href": "/v1/users/54A05594DFE5D181114C762A/activities"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/activities"
                                 },
                                 "followers": {
-                                    "href": "/v1/users/54A05594DFE5D181114C762A/followers"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
                                 },
                                 "followings": {
-                                    "href": "/v1/users/54A05594DFE5D181114C762A/followings"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/followings"
                                 },
                                 "leafed": {
-                                    "href": "/v1/users/54A05594DFE5D181114C762A/leafed"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
                                 },
                                 "messages": {
-                                    "href": "/v1/users/54A05594DFE5D181114C762A/messages"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/messages"
                                 },
                                 "posts": {
-                                    "href": "/v1/users/54A05594DFE5D181114C762A/posts"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
                                 }
                             }
                         },
-                        "comment": "<a class=\"user\" target=\"_blank\" href=\"/danrogers\">Dan Rogers</a>  Could you point to any peer-reviewed publications on the subject of climate by any of these 49 signatories?",
+                        "comment": "#This is a\ncomment\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
                         "leafs_count": 0,
-                        "created_date": "2016-03-11T11:43:58.000Z",
+                        "created_date": "2017-04-18T09:44:11.000Z",
+                        "replies": [],
+                        "replies_count": 0,
                         "leaf_state": false,
                         "_links": {
                             "self": {
-                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25"
+                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/122"
                             },
                             "replies": {
-                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/25/replies"
+                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/122/replies"
+                            },
+                            "leafers": {
+                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/122/leafers"
                             }
                         }
                     },
                     {
-                        "id": 26,
+                        "id": 123,
                         "user": {
-                            "name": "Dan Rogers",
-                            "id": "55195B5A0BD9E6AC218174AC",
-                            "username": "danrogers",
-                            "title": "Co-Founder of Linc",
+                            "name": "Afzaal Ameer",
+                            "id": "54A0117ABD2BE3F251C3492A",
+                            "username": "afzaalace",
+                            "title": "Some Title 123",
                             "location": "Madrid, Madrid, Spain",
+                            "rev": 10,
                             "following_state": false,
-                            "image": "http://cdn-d.linc.net/users/profile-55195B5A0BD9E6AC218174AC.jpg",
+                            "image": "http://cdn-d.linc.net/users/profile-54A0117ABD2BE3F251C3492A.jpg",
                             "_links": {
                                 "self": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A"
                                 },
                                 "activities": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/activities"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/activities"
                                 },
                                 "followers": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/followers"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/followers"
                                 },
                                 "followings": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/followings"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/followings"
                                 },
                                 "leafed": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/leafed"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/leafed"
                                 },
                                 "messages": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/messages"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/messages"
                                 },
                                 "posts": {
-                                    "href": "/v1/users/55195B5A0BD9E6AC218174AC/posts"
+                                    "href": "/v1/users/54A0117ABD2BE3F251C3492A/posts"
                                 }
                             }
                         },
-                        "comment": "<a class=\"user\" target=\"_blank\" href=\"/pranay\">Pranay Krishen</a>  No.",
+                        "comment": "#This is a\ncomment\nthat has links <https://linc.world/p/N>, <http://example.net/> \n",
                         "leafs_count": 0,
-                        "created_date": "2016-03-11T11:45:32.000Z",
+                        "created_date": "2017-05-17T09:15:46.000Z",
+                        "replies": [],
+                        "replies_count": 0,
                         "leaf_state": false,
                         "_links": {
                             "self": {
-                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/26"
+                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/123"
                             },
                             "replies": {
-                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/26/replies"
+                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/123/replies"
+                            },
+                            "leafers": {
+                                "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments/123/leafers"
                             }
                         }
                     }
                 ],
                 "_links": {
+                    "previous": {
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments?page=1"
+                    },
                     "self": {
-                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments"
+                        "href": "/v1/posts/56E1A4C8C6658CBD561ECF05/comments?page=2"
                     },
                     "post": {
                         "href": "/v1/posts/56E1A4C8C6658CBD561ECF05"
